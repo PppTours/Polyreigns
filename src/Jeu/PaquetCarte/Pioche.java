@@ -16,6 +16,7 @@ public class Pioche {
     public Pioche(){
 
         pioche = new ArrayList<>();
+        extensionListe = new ArrayList<>();
 
     }
 
@@ -23,7 +24,11 @@ public class Pioche {
 
     }
 
-    public void ajouterExtension(Extension pExtension){}
+    public void ajouterExtension(Extension pExtension){
+
+
+
+    }
 
 
     public Carte premiereCarte(){

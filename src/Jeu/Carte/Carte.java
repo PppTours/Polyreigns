@@ -2,10 +2,13 @@ package Jeu.Carte;
 
 import Jeu.PaquetCarte.Extension;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Decrit une carte du jeu
  */
-public class Carte {
+public class Carte implements Serializable {
 
     private String descriptif;
     private Choix choixGauche;
@@ -16,12 +19,12 @@ public class Carte {
 
     Extension extension;    //Extension d'origine
 
-
     public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite){
         extension = pExtension;
         descriptif = pDescriptif;
         choixDroite = pChoixDroite;
         choixGauche = pChoixGauche;
+
     }
 
     public String getDescriptif() {
