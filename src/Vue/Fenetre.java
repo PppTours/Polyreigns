@@ -1,6 +1,7 @@
 package Vue;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
@@ -15,9 +16,13 @@ public class Fenetre extends JFrame {
 
         setSize(600,700);
         setContentPane(panel = new Panel());
-
-        setVisible(true);
+        GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice device = graphics.getDefaultScreenDevice();
         setUndecorated(true);
+        setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        device.setFullScreenWindow(this);
+
 
         panel.addComponentListener(new ComponentAdapter() {
             @Override
