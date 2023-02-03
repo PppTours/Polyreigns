@@ -19,6 +19,14 @@ public class Controlleur {
         return carte.getDescriptif();
     }
 
+    public void piocherCarte(){
+        monde.piocherCarte();
+    }
+
+    public void faireChoix(boolean pChoixDroit){
+        monde.selectionnerChoix(pChoixDroit);
+    }
+
     public String getTexteChoix(){
         return monde.getChoixSelectionne().getReponse();
     }

@@ -20,16 +20,12 @@ public class Pioche {
 
     }
 
-    public void verifierExtension(){
-
-    }
-
     public void ajouterExtension(Extension pExtension){
 
 
 
-    }
 
+    }
 
     public Carte premiereCarte(){
         if(pioche.size()>0)
@@ -45,9 +41,6 @@ public class Pioche {
 
         return null;
     }
-
-
-
 
 
 }
