@@ -18,9 +18,7 @@ public class Pioche {
         pioche = new ArrayList<>();
         extensionListe = new ArrayList<>();
 
-    }
-
-    public void verifierExtension(){
+        ajouterExtension(Extension.getExtensionParNom("base"));
 
     }
 
@@ -28,8 +26,8 @@ public class Pioche {
 
 
 
-    }
 
+    }
 
     public Carte premiereCarte(){
         if(pioche.size()>0)
@@ -45,9 +43,6 @@ public class Pioche {
 
         return null;
     }
-
-
-
 
 
 }

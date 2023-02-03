@@ -19,7 +19,6 @@ public class Monde {
 
         joueur = new Joueur();
         pioche = new Pioche();
-
     }
 
     public Carte premiereCarte(){
@@ -31,6 +30,13 @@ public class Monde {
 
         Carte carte = pioche.piocherCarte();
         carte.getExtension().setPoints(carte.getExtension().getPoints() + choixSelectionne.getEffetPoint());
+
+        if(choixSelectionne.isActiveExtension()){   //Si le choix est liee a l'ajout d'une extension
+            if(carte.getExtension().isDejaIntegreePioche()==false){     //On regarde si l'extension n'est pas deja presente
+                pioche.ajouterExtension(carte.getExtension());
+                carte.getExtension().setDejaIntegreePioche(true);
+            }
+        }
 
         joueur.setArgent(joueur.getArgent()+choixSelectionne.getEffetArgent());
         joueur.setNote(joueur.getNote()+choixSelectionne.getEffetNote());

@@ -16,6 +16,7 @@ import java.util.ArrayList;
  */
 public class Extension {
 
+    int intervallePresence;     //lors de l'ajout de l'extension, elle sera eparpillee parmis les x prochaine cartes
     private boolean dejaIntegreePioche = false;
 
     private String nom;
@@ -25,21 +26,30 @@ public class Extension {
 
     static ArrayList<Extension> extensionListe = new ArrayList<>();
 
-    public Extension(String pNom){
+    public Extension(String pNom, int pIntervallePresence){
+
+        intervallePresence = pIntervallePresence;
 
         nom = pNom;
         extensionListe.add(this);
     }
 
-    public static int getTotalScore(){
+    public static Extension getExtensionParNom(String pNom){
+        for(Extension s : extensionListe){
+            if(s.nom.equals(pNom))
+                return s;
+        }
 
+        return null;
+    }
+
+    public static int getTotalScore(){
         int score = 0;
 
         for(Extension e : extensionListe)
             score += e.getPoints();
 
         return score;
-
     }
 
     public boolean isDejaIntegreePioche() {
