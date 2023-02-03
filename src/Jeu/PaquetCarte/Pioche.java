@@ -18,6 +18,8 @@ public class Pioche {
         pioche = new ArrayList<>();
         extensionListe = new ArrayList<>();
 
+        ajouterExtension(Extension.getExtensionParNom("base"));
+
     }
 
     public void ajouterExtension(Extension pExtension){

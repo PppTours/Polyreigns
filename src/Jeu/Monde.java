@@ -19,7 +19,6 @@ public class Monde {
 
         joueur = new Joueur();
         pioche = new Pioche();
-
     }
 
     public Carte premiereCarte(){
