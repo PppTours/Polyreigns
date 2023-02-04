@@ -14,7 +14,7 @@ public class Fenetre extends JFrame {
 
     public Fenetre(){
 
-        setSize(600,700);
+        //setSize(600,700);
         setContentPane(panel = new Panel());
         GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice device = graphics.getDefaultScreenDevice();
