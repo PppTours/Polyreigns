@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class Carte implements Serializable {
 
+    private int nombreExemplaire;    //Decrit le nombre d'exemplaire present dans son extension
+
     private String descriptif;
     private Choix choixGauche;
     private Choix choixDroite;
@@ -19,12 +21,28 @@ public class Carte implements Serializable {
 
     Extension extension;    //Extension d'origine
 
-    public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite){
+    /**
+     * Creer une carte
+     * @param pExtension son extension d'origine
+     * @param pDescriptif le texte decrivant la situation
+     * @param pChoixGauche son choix gauche associe
+     * @param pChoixDroite son choix droite associe
+     * @param pNbExemplaire son nombre d'exemplaire dans son extension
+     */
+    public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite, int pNbExemplaire){
         extension = pExtension;
         descriptif = pDescriptif;
         choixDroite = pChoixDroite;
         choixGauche = pChoixGauche;
+        nombreExemplaire = pNbExemplaire;
+    }
 
+    public int getNombreExemplaire() {
+        return nombreExemplaire;
+    }
+
+    public void setNombreExemplaire(int nombreExemplaire) {
+        this.nombreExemplaire = nombreExemplaire;
     }
 
     public String getDescriptif() {
