@@ -52,6 +52,14 @@ public class Extension {
         return score;
     }
 
+    public int getIntervallePresence() {
+        return intervallePresence;
+    }
+
+    public void setIntervallePresence(int intervallePresence) {
+        this.intervallePresence = intervallePresence;
+    }
+
     public boolean isDejaIntegreePioche() {
         return dejaIntegreePioche;
     }
