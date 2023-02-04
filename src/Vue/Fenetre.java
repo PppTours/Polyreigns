@@ -30,7 +30,7 @@ public class Fenetre extends JFrame {
                 width = e.getComponent().getWidth();
                 height = e.getComponent().getHeight();
 
-               // panel.maj();
+                // panel.maj();
             }
             @Override
             public void componentMoved(ComponentEvent e) {
