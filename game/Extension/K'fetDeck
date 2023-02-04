@@ -1,0 +1,18 @@
+{"cartes" :  [
+  {"id" : 0 ,"descriptif" : "On vous propose le poste de préseident à la K'fet ! Mais rien que l'idée vous épuise déjà",
+      "choix1" : {"text" : "Accepter", "stats" : [0,-5,5,0], "declencheur": 1},
+      "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0], "declencheur": 0}
+  }
+  {"id" : 1 , "descriptif" : "Pendant un cours, vous descendez à la K'fet pour prendre de l'eau. Vous trouvez un billet de 20€ qui a été oublié derrière le comptoir...",
+    "choix1" : {"text" : "Voler l'argent", "stats" : [10,0,0,0]},
+    "choix2" : {"text" : "Ne rien faire", "stats" : [0,0,0,0]}
+  },
+  {"id" : 2 , "descriptif" : "Vos camarades ont besoin d'aide pour le service de ce midi, ils sont surchargés.",
+    "choix1" : {"text" : "Les aider", "stats" : [0,-5,0,0]},
+    "choix2" : {"text" : "Faire semblant de n'avoir rien vu", "stats" : [0,0,0,-5]}
+  },
+  {"id" : 3 , "descriptif" : "Vous avez oublié d'encaisser votre repas de ce midi.",
+    "choix1" : {"text" : "Personne ne le saura...", "stats" : [0,0,0,0]},
+    "choix2" : {"text" : "Je vais payer !", "stats" : [-5,0,0,0]}
+  }
+]}

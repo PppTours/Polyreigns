@@ -48,6 +48,8 @@ public class FichierManager {
 
     public static void importerCarte(){
 
+
+
     }
 
     public Image chargerImage(String pChemin){
