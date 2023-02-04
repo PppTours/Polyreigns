@@ -8,6 +8,14 @@ public class Controlleur {
     Monde monde;
 
     /**
+     * Constructeur de Controlleur, instancie le monde du jeu
+     */
+    public Controlleur(){
+        monde = new Monde();
+    }
+
+
+    /**
      * Recupere le texte decrivant la situation de la carte
      * @return
      */
