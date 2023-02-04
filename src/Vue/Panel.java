@@ -5,30 +5,38 @@ import java.awt.*;
 
 public class Panel extends JPanel {
 
-    JTextField scoreTextfield;
-    JTextArea descriptifTextArea;
-
     PanelStat panelStat;
+    JLabel cardPicture;
+    JLabel descriptifTextArea;
+    JLabel scoreTextfield;
 
     public Panel(){
 
         setBackground(Color.yellow);
-        setSize(1080,1080);
         setLayout(null);
 
-        scoreTextfield = new JTextField("Score : 0000");
-        scoreTextfield.setLocation(500,500);
+        scoreTextfield = new JLabel("Score : 0000");
+        scoreTextfield.setSize(100,50);
         add(scoreTextfield);
 
-        descriptifTextArea = new JTextArea("Descriptif de la carte");
-        descriptifTextArea.setSize(400,200);
-        descriptifTextArea.setLocation(100,400);
+        JLabel cardPicture = new JLabel("Carte");
+        cardPicture.setSize(350,450);
+        cardPicture.setIcon(new ImageIcon("\\src\\Pictures\\carte.jpg"));
+        add(cardPicture);
+
+        descriptifTextArea = new JLabel("Descriptif de la carte");
+        descriptifTextArea.setSize(300,100);
         add(descriptifTextArea);
 
         panelStat = new PanelStat();
-        panelStat.setLocation(100,0);
         add(panelStat);
 
     }
+ public void maj(){
+     scoreTextfield.setLocation((getWidth()-scoreTextfield.getWidth()),getHeight()-scoreTextfield.getHeight());
+     System.out.println(scoreTextfield.getLocation());
+     descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,(getHeight()-descriptifTextArea.getHeight())/2);
+     panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
 
+ }
 }
