@@ -7,6 +7,10 @@ public class Controlleur {
 
     Monde monde;
 
+    public Controlleur(){
+        monde = new Monde();
+    }
+
     /**
      * Recupere le texte decrivant la situation de la carte
      * @return
@@ -69,10 +73,12 @@ public class Controlleur {
     public int[] getEffetCarte(){
         int[] tab = new int[4];
 
-        tab[0] = monde.getChoixSelectionne().getEffetArgent();
-        tab[1] = monde.getChoixSelectionne().getEffetEnergie();
-        tab[2] = monde.getChoixSelectionne().getEffetVieSociale();
-        tab[3] = monde.getChoixSelectionne().getEffetNote();
+        if(monde.getChoixSelectionne()!=null){
+            tab[0] = monde.getChoixSelectionne().getEffetArgent();
+            tab[1] = monde.getChoixSelectionne().getEffetEnergie();
+            tab[2] = monde.getChoixSelectionne().getEffetVieSociale();
+            tab[3] = monde.getChoixSelectionne().getEffetNote();
+        }
 
         return tab;
     }
