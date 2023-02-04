@@ -1,0 +1,18 @@
+{"cartes" : [
+  {"id" : 1 , "descriptif" : "Vous recroisez dans un couloir cette mysterieuse otarie. Elle vous regarde et vous dit gentiment 'Oute oute'.",
+    "choix1" : {"text" : "Oute ?", "stats" : [0,0,10,0]},
+    "choix2" : {"text" : "Oui oui c'est ça", "stats" : [0,0,-10,0]}
+  },
+  {"id" : 2 , "descriptif" : "Vous voyez l'otarie pendant la pause du midi. Elle semble avoir faim, mais vous n'avez que votre déjeuner à lui donner : des croustibats. Lui donnez-vous ?",
+    "choix1" : {"text" : "Oui", "stats" : [0,-5,5,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,-5,0,0]}
+  },
+  {"id" : 3 , "descriptif" : "Vous croisez le regard de votre amie l'otarie, elle s'exclame 'OUUUTE'",
+    "choix1" : {"text" : "Crier 'OUUUTE'", "stats" : [0,0,10,0]},
+    "choix2" : {"text" : "S'enfuir", "stats" : [0,-5,0,0]}
+  },
+  {"id" : 4 , "descriptif" : "Vous voyez l'otarie en train de voler un vélo devant Polytech",
+    "choix1" : {"text" : "Laisser faire", "stats" : [5,5,5,5]},
+    "choix2" : {"text" : "Appeler le gardien pour qu'il aille lui casser la gueule", "stats" : [-15,-15,-15,-15]}
+  }
+]}
