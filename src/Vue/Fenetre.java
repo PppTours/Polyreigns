@@ -15,24 +15,25 @@ public class Fenetre extends JFrame {
 
     public Fenetre(){
 
+        this.setLayout(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice device = graphics.getDefaultScreenDevice();
 
         setSize(width, height);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBackground(Color.blue);
 
         panel = new Panel();
-        panel.setSize(100, 100);
-        panel.setLocation(300,300);
+        panel.setSize(height, height);
+        panel.setLocation((width-height)/2,(height-height)/2);
         panel.setBackground(Color.yellow);
         add(panel);
 
-        setBackground(Color.green);
         setUndecorated(true);
         setVisible(true);
         device.setFullScreenWindow(this);
 
-        /*panel.addComponentListener(new ComponentAdapter() {
+        panel.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
                 width = e.getComponent().getWidth();
@@ -44,7 +45,7 @@ public class Fenetre extends JFrame {
             public void componentMoved(ComponentEvent e) {
                 System.out.println("Moved to " + e.getComponent().getLocation());
             }
-        });*/
+        });
 
     }
 }
