@@ -14,6 +14,9 @@ public class Pioche {
 
     ArrayList<Extension> extensionListe;
 
+    /**
+     * Constructeur d'une pioche, ajoute les cartes de l'extension 'base'
+     */
     public Pioche(){
 
         pioche = new ArrayList<>();
@@ -29,6 +32,10 @@ public class Pioche {
      *
      */
 
+    /**
+     * Ajoute une extension dans la pioche. L'ajoute dans l'intervalle approprie
+     * @param pExtension l'extension a ajouter
+     */
     public void ajouterExtension(Extension pExtension){
 
         if(pExtension == null){
@@ -71,6 +78,10 @@ public class Pioche {
 
     }
 
+    /**
+     * Voir la premiere carte de la pioche
+     * @return la carte
+     */
     public Carte premiereCarte(){
         if(pioche.size()>0)
             return pioche.get(0);
@@ -79,6 +90,11 @@ public class Pioche {
         return null;
     }
 
+    /**
+     * Enleve la premiere carte de la pioche. Si la carte est chainee, met sur le dessus
+     * de la pioche la carte liee
+     * @return la carte qui a ete retiree
+     */
     public Carte piocherCarte(){
         if(pioche.size()>0){
             Carte piochee = pioche.remove(0);
@@ -90,10 +106,17 @@ public class Pioche {
         return null;
     }
 
+    /**
+     * Vide la pioche
+     */
     public void viderPioche(){
         pioche.clear();
     }
 
+    /**
+     * Ajoute une carte au debut de la pioche
+     * @param carte la carte a ajouter
+     */
     public void ajouterCarteDebut(Carte carte){
         pioche.add(0,carte);
     }

@@ -15,6 +15,15 @@ public class Choix {
 
     boolean activeExtension = false;    //Si vrai, on integrera a la pioche l'extension de la carte
 
+    /**
+     * Constructeur d'un choix
+     * @param pReponse le texte decrivant la reponse
+     * @param pArgent l'effet sur l'argent
+     * @param pVieSociale l'effet sur la vie sociale
+     * @param pEnergie l'effet sur l'energie
+     * @param pNote l'effet sur les notes
+     * @param pPoint la quantite de points gagnes
+     */
     public Choix(String pReponse, int pArgent, int pVieSociale, int pEnergie, int pNote, int pPoint){
         reponse = pReponse;
         effetArgent = pArgent;

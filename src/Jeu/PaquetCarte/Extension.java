@@ -26,6 +26,12 @@ public class Extension {
 
     static ArrayList<Extension> extensionListe = new ArrayList<>();
 
+    /**
+     * Constructeur d'une extension
+     * @param pNom son nom
+     * @param pIntervallePresence l'intervalle de cartes dans la pioche
+     *                            ou cette extension devra etre dispersee
+     */
     public Extension(String pNom, int pIntervallePresence){
 
         intervallePresence = pIntervallePresence;
@@ -34,6 +40,11 @@ public class Extension {
         extensionListe.add(this);
     }
 
+    /**
+     * Cherche une extension via son nom
+     * @param pNom le nom a chercher
+     * @return l'extension trouvee
+     */
     public static Extension getExtensionParNom(String pNom){
         for(Extension s : extensionListe){
             if(s.nom.equals(pNom))
@@ -43,6 +54,13 @@ public class Extension {
         return null;
     }
 
+    /**
+     * Recupere le score de toute les extensions, qui est donc le score total
+     * Le score est stocke par extension pour permettre l'activation de certaines
+     * choses apres avoir atteint un score dans une extension precise, comme
+     * l'ajout d'une autre extension par exemple
+     * @return
+     */
     public static int getTotalScore(){
         int score = 0;
 

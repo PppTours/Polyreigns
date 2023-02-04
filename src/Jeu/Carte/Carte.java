@@ -21,6 +21,14 @@ public class Carte implements Serializable {
 
     Extension extension;    //Extension d'origine
 
+    /**
+     * Creer une carte
+     * @param pExtension son extension d'origine
+     * @param pDescriptif le texte decrivant la situation
+     * @param pChoixGauche son choix gauche associe
+     * @param pChoixDroite son choix droite associe
+     * @param pNbExemplaire son nombre d'exemplaire dans son extension
+     */
     public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite, int pNbExemplaire){
         extension = pExtension;
         descriptif = pDescriptif;

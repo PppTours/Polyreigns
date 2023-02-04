@@ -17,18 +17,31 @@ public class Monde {
 
     boolean jeuFini;
 
+    /**
+     * Constructeur de monde, instancie les acteurs
+     */
     public Monde(){
 
         joueur = new Joueur();
         pioche = new Pioche();
     }
 
+    /**
+     * Voir la premiere carte de la pioche
+     * @return la premiere carte
+     */
     public Carte premiereCarte(){
         return pioche.premiereCarte();
     }
 
-
+    /**
+     * Enleve la premiere carte de la pioche. Verifie si cela cause l'ajout d'une extension.
+     * Met a jour les stats du joueur et verifie si le jeu est fini
+     */
     public void piocherCarte(){
+
+        if(choixSelectionne==null)
+            return;
 
         Carte carte = pioche.piocherCarte();
         carte.getExtension().setPoints(carte.getExtension().getPoints() + choixSelectionne.getEffetPoint());
@@ -49,6 +62,10 @@ public class Monde {
 
     }
 
+    /**
+     * Preselectionne un choix pour une carte
+     * @param pChoixDroit true si c'est le choix droite, false pour le gauche
+     */
     public void selectionnerChoix(boolean pChoixDroit){
 
         Carte carte = pioche.premiereCarte();
@@ -60,6 +77,13 @@ public class Monde {
 
     }
 
+    /**
+     * Verifie si le jeu est termine.
+     * Si la pioche est vide, alors le jeu est fini.
+     * Sinon, si l'une des stats du joueur est <= 0, on vide la pioche
+     * et on rajoute une carte custom representant la cause de la fin du joueur.
+     * Le joueur pioche cette derniere carte, et arrive donc sur la fin normale.
+     */
     public void verifierJeuFini(){
 
         //Verifier si le jeu est fini
@@ -69,7 +93,7 @@ public class Monde {
         }
 
 
-        if(joueur.getArgent()==0){
+        if(joueur.getArgent()<=0){
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
@@ -77,33 +101,37 @@ public class Monde {
                     "et vous ne pouvez pas continuer votre vie d'etudiant, vous allez devoir trouver un travail a macdo.",
                     gaucheFin,droiteFin,1);
 
+            pioche.viderPioche();
             pioche.ajouterCarteDebut(carteFin);
         }
-        if(joueur.getNote()==0){
+        if(joueur.getNote()<=0){
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
             Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"eztqrysthdjhg",
                     gaucheFin,droiteFin,1);
 
+            pioche.viderPioche();
             pioche.ajouterCarteDebut(carteFin);
         }
-        if(joueur.getEnergie()==0){
+        if(joueur.getEnergie()<=0){
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
             Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"aezrrgtrhyj",
                     gaucheFin,droiteFin,1);
 
+            pioche.viderPioche();
             pioche.ajouterCarteDebut(carteFin);
         }
-        if(joueur.getVieSociale()==0){
+        if(joueur.getVieSociale()<=0){
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
             Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"Vefrgthyj",
                     gaucheFin,droiteFin,1);
 
+            pioche.viderPioche();
             pioche.ajouterCarteDebut(carteFin);
         }
 
