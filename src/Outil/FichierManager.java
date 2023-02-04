@@ -1,6 +1,12 @@
 package Outil;
 
+import Jeu.Carte.Choix;
 import Jeu.MeilleurJoueur;
+import Jeu.PaquetCarte.Extension;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.awt.*;
 import java.io.*;
@@ -48,6 +54,27 @@ public class FichierManager {
 
     public static void importerCarte(){
 
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("game/Extensions/MainDeck.json")) {
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray cartes = (JSONArray) obj;
+
+            Extension main = new Extension("MainDeck",-1);
+
+            for(Object o : cartes){
+
+                JSONObject object = (JSONObject) o;
+
+                Choix choixDroite = new Choix();
+                Choix choixGauche = new Choix();
+
+            }
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
 
 
     }

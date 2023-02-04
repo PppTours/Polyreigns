@@ -37,6 +37,13 @@ public class Carte implements Serializable {
         nombreExemplaire = pNbExemplaire;
     }
 
+    /**
+     * Constructeur vide de carte
+     */
+    public Carte(){
+
+    }
+
     public int getNombreExemplaire() {
         return nombreExemplaire;
     }

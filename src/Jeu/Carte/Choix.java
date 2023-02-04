@@ -34,6 +34,13 @@ public class Choix {
 
     }
 
+    /**
+     * Constructeur vide de choix
+     */
+    public Choix(){
+
+    }
+
     public boolean isActiveExtension() {
         return activeExtension;
     }

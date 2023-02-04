@@ -2,7 +2,7 @@
   {"id" : 0 ,"descriptif" : "On vous propose le poste de préseident à la K'fet ! Mais rien que l'idée vous épuise déjà",
       "choix1" : {"text" : "Accepter", "stats" : [0,-5,5,0], "declencheur": 1},
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0], "declencheur": 0}
-  }
+  },
   {"id" : 1 , "descriptif" : "Pendant un cours, vous descendez à la K'fet pour prendre de l'eau. Vous trouvez un billet de 20€ qui a été oublié derrière le comptoir...",
     "choix1" : {"text" : "Voler l'argent", "stats" : [10,0,0,0]},
     "choix2" : {"text" : "Ne rien faire", "stats" : [0,0,0,0]}
