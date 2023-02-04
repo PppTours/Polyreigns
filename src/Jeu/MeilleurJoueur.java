@@ -9,12 +9,12 @@ import java.util.Comparator;
  */
 public class MeilleurJoueur {
 
-    String nom;
-    int score;
+    private String nom;
+    private int score;
 
-    static ArrayList<MeilleurJoueur> classement = new ArrayList<>();
+    public static ArrayList<MeilleurJoueur> classement = new ArrayList<>();
 
-    private MeilleurJoueur(String pNom, int pPoints){
+    public MeilleurJoueur(String pNom, int pPoints){
         nom = pNom;
         score = pPoints;
     }
@@ -28,6 +28,19 @@ public class MeilleurJoueur {
 
     }
 
+    public String getNom() {
+        return nom;
+    }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
