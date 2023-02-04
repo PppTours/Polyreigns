@@ -137,6 +137,15 @@ public class Monde {
 
     }
 
+    /**
+     * Ajoute le joueur a la liste des meilleurs joueurs, la classe MeilleurJoueur
+     * se chargera de savoir si il est retenu parmis les meilleurs ou non
+     * @param nom
+     */
+    public void enregistrerJoueur(String nom){
+        MeilleurJoueur.ajouterJoueur(nom, Extension.getTotalScore());
+    }
+
     public int getScore(){
         return Extension.getTotalScore();
     }

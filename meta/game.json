@@ -1,0 +1,9 @@
+{
+  "title":           "PolyReigns",
+  "creation_date":   "04/02/2023",
+  "description":     "Plagiat assumé du jeu \nReigns, remixé à la\nsauce Polytech!",
+  "authors":         [ "Corentin Esnault","Julien Mathia" ],
+  "run_command":     [ "java", "-jar", "polyreigns.jar" ],
+  "tags":            [ "puzzle" ],
+  "mods":            []
+}

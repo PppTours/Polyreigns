@@ -92,6 +92,14 @@ public class Controlleur {
         return tab;
     }
 
+    /**
+     * A la fin de la partie, tente d'enregistrer le joueur dans le classement
+     * @param nom
+     */
+    public void donnerNomJoueur(String nom){
+        monde.enregistrerJoueur(nom);
+    }
+
 
 
 
