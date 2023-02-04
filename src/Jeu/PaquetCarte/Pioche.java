@@ -3,6 +3,7 @@ package Jeu.PaquetCarte;
 import Jeu.Carte.Carte;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -26,11 +27,6 @@ public class Pioche {
 
     }
 
-    /**
-     * Il faut faire en sorte que toute les cartes permettant de débloquer une extension
-     * soit dans les 20-30 premières.
-     *
-     */
 
     /**
      * Ajoute une extension dans la pioche. L'ajoute dans l'intervalle approprie
@@ -73,6 +69,25 @@ public class Pioche {
             pioche.addAll(0,aAjouter);
 
         }
+
+        //Les cartes pouvant declencher des extensions doivent etre au debut
+        ArrayList<Carte> carteDeclencheuse = new ArrayList<>();
+
+        for(int i = 0; i<pioche.size(); i++){
+
+            Carte c = pioche.get(i);
+
+            //Si la carte represente une extension non integree, c'est que c'est une carte declencheuse
+            if(c.getExtension().isDejaIntegreePioche()==false){
+                carteDeclencheuse.add(pioche.remove(i));
+                i--;
+            }
+        }
+
+        carteDeclencheuse.addAll(pioche.subList(0, 20));
+        pioche = (ArrayList<Carte>) pioche.subList(20,pioche.size());
+        Collections.shuffle(carteDeclencheuse);
+        pioche.addAll(0,carteDeclencheuse);
 
         pioche.add(0,premiere);
 
