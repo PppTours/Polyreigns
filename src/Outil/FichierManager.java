@@ -1,5 +1,6 @@
 package Outil;
 
+import Jeu.Carte.Carte;
 import Jeu.Carte.Choix;
 import Jeu.MeilleurJoueur;
 import Jeu.PaquetCarte.Extension;
@@ -48,34 +49,99 @@ public class FichierManager {
             bufferedReader.close();
 
         } catch (IOException e) {
+
         }
 
     }
 
-    public static void importerCarte(){
+    public static void importerTouteLesCartes(){
+
+        String nomDeckPrincipal = "MainDeck";
+
+        File f = new File("game/Extension");
+
+        String[] chemins = f.list();
+
+        if(chemins==null)
+            return;
+
+        for(String chemin : chemins){
+            importerExtension(chemin);
+        }
+
+        Extension.initialiseExtension();
+
+    }
+
+    private static void importerExtension(String nomFichier){
 
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("game/Extensions/MainDeck.json")) {
-            Object obj = jsonParser.parse(reader);
+        try (FileReader reader = new FileReader("game/Extension/"+nomFichier)) {
+            JSONObject obj = (JSONObject) jsonParser.parse(reader);
 
-            JSONArray cartes = (JSONArray) obj;
+            JSONArray cartes = (JSONArray) obj.get("cartes");
 
-            Extension main = new Extension("MainDeck",-1);
+            Extension extension = new Extension(nomFichier.substring(0,nomFichier.indexOf('.')),-1);
 
             for(Object o : cartes){
 
                 JSONObject object = (JSONObject) o;
 
-                Choix choixDroite = new Choix();
-                Choix choixGauche = new Choix();
 
+                // CHOIX 1
+
+                JSONObject choix = (JSONObject) object.get("choix1");
+
+                boolean declencheurchoix = false;
+                Object objectDenc = choix.get("declencheur");
+                if(objectDenc!=null){
+                    declencheurchoix = ((Long)object.get("occurence"))>0;
+                }
+
+                JSONArray arrayChoix = (JSONArray)choix.get("stats");
+
+                int[] statschoix = new int[arrayChoix.size()];
+                for(int i=0; i<arrayChoix.size(); i++){
+                    statschoix[i] = Integer.parseInt(arrayChoix.get(i).toString());
+                }
+                String reponsechoix = (String) choix.get("text");
+
+                Choix choixDroite = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],1);
+                choixDroite.setActiveExtension(declencheurchoix);
+
+
+                // CHOIX 2
+
+                choix = (JSONObject) object.get("choix2");
+
+                declencheurchoix = false;
+                objectDenc = choix.get("declencheur");
+                if(objectDenc!=null){
+                    declencheurchoix = ((Long)object.get("occurence"))>0;
+                }
+
+                arrayChoix = (JSONArray)choix.get("stats");
+
+                statschoix = new int[arrayChoix.size()];
+                for(int i=0; i<arrayChoix.size(); i++){
+                    statschoix[i] = Integer.parseInt(arrayChoix.get(i).toString());
+                }
+                reponsechoix = (String) choix.get("text");
+
+                Choix choixGauche = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],1);
+                choixGauche.setActiveExtension(declencheurchoix);
+
+
+                int occurence = ((Long)object.get("occurence")).intValue();
+                String description = (String) object.get("descriptif");
+
+                extension.getCartes().add(new Carte(extension,description,choixDroite,choixGauche,occurence));
             }
 
         } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
-
 
     }
 

@@ -23,7 +23,7 @@ public class Pioche {
         pioche = new ArrayList<>();
         extensionListe = new ArrayList<>();
 
-        ajouterExtension(Extension.getExtensionParNom("base"));
+        ajouterExtension(Extension.getExtensionParNom("MainDeck"));
 
     }
 

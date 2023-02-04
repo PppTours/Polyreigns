@@ -1,7 +1,10 @@
-import Vue.Fenetre;
+import Outil.FichierManager;
 
 public class Main {
     public static void main(String[] args) {
-        Fenetre f = new Fenetre();
+        FichierManager.importerTouteLesCartes();
+
+        System.out.println();
+        //Fenetre f = new Fenetre();
     }
 }

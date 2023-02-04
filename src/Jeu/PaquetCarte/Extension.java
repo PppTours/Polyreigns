@@ -35,9 +35,27 @@ public class Extension {
     public Extension(String pNom, int pIntervallePresence){
 
         intervallePresence = pIntervallePresence;
+        cartes = new ArrayList<>();
 
         nom = pNom;
         extensionListe.add(this);
+    }
+
+    /**
+     * Initialise le fonctionnement des extensions. Chaque premiere carte d'extensions est ajoutee dans MainDeck
+     */
+    public static void initialiseExtension(){
+        Extension main = Extension.getExtensionParNom("MainDeck");
+
+        for(Extension e : extensionListe){
+
+            if(!e.nom.equals(main.getNom())){
+                Carte c = e.getCartes().remove(0);
+                main.getCartes().add(c);
+            }
+
+        }
+
     }
 
     /**
