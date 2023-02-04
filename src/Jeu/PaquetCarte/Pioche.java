@@ -2,9 +2,7 @@ package Jeu.PaquetCarte;
 
 import Jeu.Carte.Carte;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -39,8 +37,7 @@ public class Pioche {
         }
 
         //On garde la premiere carte de cote car elle est deja affichee
-        //On doit aussi verifier si cette carte n'est pas liee a des suivantes
-        ArrayList<Carte> aGarder = new ArrayList<>();
+        Carte premiere = pioche.remove(0);
 
         ArrayList<Carte> aAjouter = new ArrayList<>();
 
@@ -57,7 +54,7 @@ public class Pioche {
         }else{      //Utiliser InterVallePresence pour disperser les cartes
 
             aAjouter.addAll(pioche.subList(0, pExtension.getIntervallePresence()));
-            pioche.removeAll(aAjouter);
+            pioche = (ArrayList<Carte>) pioche.subList(pExtension.getIntervallePresence(),pioche.size());
 
             for(Carte c : pExtension.getCartes()){
                 for(int i=0; i<c.getNombreExemplaire(); i++)
@@ -70,7 +67,7 @@ public class Pioche {
 
         }
 
-        pioche.addAll(0,aGarder);
+        pioche.add(0,premiere);
 
     }
 
@@ -91,6 +88,14 @@ public class Pioche {
         }
 
         return null;
+    }
+
+    public void viderPioche(){
+        pioche.clear();
+    }
+
+    public void ajouterCarteDebut(Carte carte){
+        pioche.add(0,carte);
     }
 
 

@@ -23,6 +23,10 @@ public class Controlleur {
         monde.piocherCarte();
     }
 
+    public boolean verifierJeuFini(){
+        return monde.getJeuFini();  //Si le jeu est fini, desactiver les controles et changer l'affichage
+    }
+
     public void faireChoix(boolean pChoixDroit){
         monde.selectionnerChoix(pChoixDroit);
     }
