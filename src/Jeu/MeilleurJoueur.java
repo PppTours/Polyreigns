@@ -23,7 +23,7 @@ public class MeilleurJoueur {
 
         MeilleurJoueur j = new MeilleurJoueur(nom,point);
         classement.add(j);
-        classement.sort(Comparator.comparingInt(o -> o.score));
+        classement.sort((o1, o2) -> o2.score-o1.score);
 
         int taille = Math.min(classement.size(), 10);
 

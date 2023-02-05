@@ -13,12 +13,13 @@ import Outil.RouletteTextField;
 
 public class PanelScore extends JPanel {
 
-    Controlleur controlleur;
-
     JLabel score;
     RouletteTextField firstLetter;
     RouletteTextField secondLetter;
     RouletteTextField thirdLetter;
+
+    JLabel recommencer;
+    JLabel quitter;
 
     int indiceSelection = 1;
 
@@ -26,9 +27,7 @@ public class PanelScore extends JPanel {
         setLayout(null);
         setBackground(Color.DARK_GRAY);
         setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
-        setSize(300,200);
-
-        controlleur = new Controlleur();
+        setSize(300,300);
 
         score = new JLabel();
         add(score);
@@ -42,21 +41,31 @@ public class PanelScore extends JPanel {
         thirdLetter = new RouletteTextField();
         add(thirdLetter);
 
+        recommencer = new JLabel();
+        recommencer.setText("Recommencer");
+        add(recommencer);
+
+        quitter = new JLabel();
+        quitter.setText("Quitter");
+        add(quitter);
+
         setVisible(false);
 
     }
 
-    public void afficherScore(){
+    public void afficherScore(int pScore){
 
-        score.setText("Score : " + controlleur.getScore());
+        Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
+
+        score.setText("Score : " + pScore);
         score.setSize(120,50);
-        score.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
+        score.setFont(f);
         score.setForeground(Color.white);
         score.setLocation(getWidth()/2-score.getWidth()/2, 0);
 
         secondLetter.setText("A");
         secondLetter.setSize(50,70);
-        secondLetter.setLocation(getWidth()/2-secondLetter.getWidth()/2,getHeight()/2-secondLetter.getHeight()/2);
+        secondLetter.setLocation(getWidth()/2-secondLetter.getWidth()/2,getHeight()/2-secondLetter.getHeight());
 
         firstLetter.setText("A");
         firstLetter.setSize(50,70);
@@ -65,6 +74,17 @@ public class PanelScore extends JPanel {
         thirdLetter.setText("A");
         thirdLetter.setSize(50,70);
         thirdLetter.setLocation(secondLetter.getX()+secondLetter.getWidth()+10, secondLetter.getY());
+
+        recommencer.setFont(f);
+        quitter.setFont(f);
+
+        recommencer.setSize(150,30);
+        recommencer.setForeground(Color.white);
+        recommencer.setLocation(getWidth()/2-recommencer.getWidth()/2,secondLetter.getY()+100);
+
+        quitter.setSize(150,30);
+        quitter.setForeground(Color.white);
+        quitter.setLocation(getWidth()/2-quitter.getWidth()/2,secondLetter.getY()+150);
 
         setVisible(true);
         firstLetter.selectionner();
@@ -76,12 +96,16 @@ public class PanelScore extends JPanel {
         secondLetter.deselectionner();
         thirdLetter.deselectionner();
 
+        quitter.setForeground(Color.white);
+        recommencer.setForeground(Color.white);
+
         switch(indiceSelection){
             case 1 -> firstLetter.selectionner();
             case 2 -> secondLetter.selectionner();
             case 3 -> thirdLetter.selectionner();
+            case 4 -> recommencer.setForeground(Color.green);
+            case 5 -> quitter.setForeground(Color.green);
         }
-
     }
 
     public void incrementeLettre(){
@@ -104,19 +128,22 @@ public class PanelScore extends JPanel {
 
     }
 
-
     public void incremeterIndiceSelection(){
         indiceSelection++;
-        if(indiceSelection>3)
-            indiceSelection = 3;
+        if(indiceSelection>5)
+            indiceSelection = 5;
         majSelection();
     }
 
     public void decrementerIndiceSelection(){
         indiceSelection--;
-        if(indiceSelection<1)
-            indiceSelection = 1;
+        if(indiceSelection<0)
+            indiceSelection = 0;
         majSelection();
+    }
+
+    public int getSelection(){
+        return indiceSelection;
     }
 
     public String getNom() {

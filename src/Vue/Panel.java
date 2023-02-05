@@ -28,7 +28,12 @@ public class Panel extends JPanel {
 
     boolean jeuTermine = false;
 
-    public Panel(){
+    Fenetre parent;
+
+
+    public Panel(Fenetre pParent){
+
+        parent = pParent;
 
         controlleur = new Controlleur();
 
@@ -38,7 +43,7 @@ public class Panel extends JPanel {
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
         panelScore = new PanelScore();
-        panelScore.setVisible(false);
+        //panelScore.setVisible(false);
         add(panelScore);
 
         choix1 = new PanelChoix("flechegauche.png");
@@ -77,12 +82,45 @@ public class Panel extends JPanel {
         panelStat = new PanelStat(controlleur);
         add(panelStat);
 
+
         //Gestion des inputs
         setFocusable(true);
 
         addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+
+                if(jeuTermine==false){
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                        if(controlleur.piocherCarte()) {
+                            panelStat.repaint();
+                            scoreTextfield.setText("Score : " + controlleur.getScore());
+                            effetEcriture.stopEffet();
+                            effetEcriture = new EffetEcriture(descriptifTextArea, controlleur.getDescriptionCarte());
+                            effetEcriture.start();
+                            jeuTermine = controlleur.verifierJeuFini();
+
+                            majTexte();
+
+                            if (jeuTermine)
+                                panelScore.afficherScore(controlleur.getScore());
+                        }
+                    }
+                }else {
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                        controlleur.donnerNomJoueur(panelScore.getNom());
+
+                        int selection = panelScore.getSelection();
+
+                        if(selection == 5){
+                            System.exit(0);
+                        }
+                        if(selection == 4){
+                            setVisible(false);
+                            parent.init();
+                        }
+                    }
+                }
 
             }
 
@@ -130,26 +168,6 @@ public class Panel extends JPanel {
                         choix1.setVisible(true);
                         choix2.setVisible(true);
                     }
-                    else if (e.getKeyChar() == KeyEvent.VK_ENTER){
-                        if(controlleur.piocherCarte()) {
-                            panelStat.repaint();
-                            scoreTextfield.setText("Score : " + controlleur.getScore());
-                            effetEcriture.stopEffet();
-                            effetEcriture = new EffetEcriture(descriptifTextArea, controlleur.getDescriptionCarte());
-                            effetEcriture.start();
-                            jeuTermine = controlleur.verifierJeuFini();
-
-                            majTexte();
-
-                            if (jeuTermine)
-                                panelScore.afficherScore();
-                        }
-                    }
-                }else {
-                    if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-                        controlleur.donnerNomJoueur(panelScore.getNom());
-                        System.exit(0);
-                    }
                 }
             }
         });
@@ -184,6 +202,7 @@ public class Panel extends JPanel {
         }
 
     }
+
 
     public void previewChoix1(){
         maj();
