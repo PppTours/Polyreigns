@@ -1,15 +1,13 @@
 package Controlleur;
 
 import Jeu.Carte.Carte;
+import Jeu.Joueur;
 import Jeu.Monde;
 
 public class Controlleur {
 
     Monde monde;
 
-    public Controlleur(){
-        monde = new Monde();
-    }
 
     /**
      * Constructeur de Controlleur, instancie le monde du jeu
@@ -115,5 +113,7 @@ public class Controlleur {
     }
 
 
-
+    public int getMaxStat() {
+        return Joueur.maxStat;
+    }
 }

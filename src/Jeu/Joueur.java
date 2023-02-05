@@ -10,14 +10,14 @@ public class Joueur {
     private int vieSociale;
     private int note;
 
-    private int maxStat = 70;
+    public final static int maxStat = 50;
 
     public Joueur(){
 
-        argent = 50;
-        energie = 50;
-        vieSociale = 50;
-        note = 50;
+        argent = 30;
+        energie = 30;
+        vieSociale = 30;
+        note = 30;
     }
 
     public int getArgent() {

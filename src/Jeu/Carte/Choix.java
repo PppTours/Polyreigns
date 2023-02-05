@@ -24,14 +24,13 @@ public class Choix {
      * @param pNote l'effet sur les notes
      * @param pPoint la quantite de points gagnes
      */
-    public Choix(String pReponse, int pArgent, int pVieSociale, int pEnergie, int pNote, int pPoint){
+    public Choix(String pReponse, int pArgent, int pEnergie, int pVieSociale, int pNote, int pPoint){
         reponse = pReponse;
         effetArgent = pArgent;
         effetVieSociale = pVieSociale;
         effetNote = pNote;
         effetEnergie = pEnergie;
         effetPoint = pPoint;
-
     }
 
     /**

@@ -44,6 +44,10 @@ public class Monde {
             return;
 
         Carte carte = pioche.piocherCarte();
+
+        if(carte.getExtension() == null)
+            return;
+
         carte.getExtension().setPoints(carte.getExtension().getPoints() + choixSelectionne.getEffetPoint());
 
         if(choixSelectionne.isActiveExtension()){   //Si le choix est liee a l'ajout d'une extension
@@ -71,6 +75,9 @@ public class Monde {
     public void selectionnerChoix(int choix){
 
         Carte carte = pioche.premiereCarte();
+
+        if(carte == null)
+            return;
 
         if(choix==2)
             choixSelectionne = carte.getChoixDroite();

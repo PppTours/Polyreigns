@@ -83,6 +83,7 @@ public class Panel extends JPanel {
                     previewChoix2();
                 } else if (e.getKeyChar() == KeyEvent.VK_ENTER){
                     controlleur.piocherCarte();
+                    panelStat.repaint();
                     maj();
                     choix1.setVisible(false);
                     choix2.setVisible(false);
@@ -120,6 +121,7 @@ public class Panel extends JPanel {
         choix1.setText(controlleur.getTexteChoix());
         choix1.setVisible(true);
         choix2.setVisible(false);
+        panelStat.repaint();
     }
     public void previewChoix2(){
         maj();
@@ -128,6 +130,8 @@ public class Panel extends JPanel {
         choix2.setText(controlleur.getTexteChoix());
         choix1.setVisible(false);
         choix2.setVisible(true);
+        panelStat.repaint();
+
     }
 
     @Override

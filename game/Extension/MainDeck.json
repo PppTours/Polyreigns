@@ -106,7 +106,7 @@
   },
   {"id" : 22 ,"descriptif" : "Ce midi vous avez la turbo dalle. Mangez-vous plus que d'habitude ?",
     "choix1" : {"text" : "OUI J'AI FAIM", "stats" : [-5,5,0,0]},
-    "choix2" : {"text" : "Je mange normalement", "stats" : [0,5,0,0]},
+    "choix2" : {"text" : "Je mange normalement", "stats" : [0,-5,0,0]},
     "occurence" : 2
   },
   {"id" : 23 ,"descriptif" : "Une soirée est prévue place Plum' ce soir. Mais il y a aussi ce cours ou vous n'avez rien compris (et pas écouté)...",

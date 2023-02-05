@@ -136,14 +136,14 @@ public class FichierManager {
                 }
                 reponsechoix = (String) choix.get("text");
 
-                Choix choixGauche = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],1);
+                Choix choixGauche = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],5);
                 choixGauche.setActiveExtension(declencheurchoix);
 
 
                 int occurence = ((Long)object.get("occurence")).intValue();
                 String description = (String) object.get("descriptif");
 
-                Carte c = new Carte(extension,description,choixDroite,choixGauche,occurence);
+                Carte c = new Carte(extension,description,choixGauche,choixDroite,occurence);
 
                 extension.getCartes().add(c);
             }

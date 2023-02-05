@@ -48,6 +48,8 @@ public class Pioche {
 
         if(pExtension.getIntervallePresence() == -1){   //Jeu de base, pas de dispersion
 
+            pExtension.setDejaIntegreePioche(true);
+
             for(Carte c : pExtension.getCartes()){
                 for(int i=0; i<c.getNombreExemplaire(); i++)
                     aAjouter.add(c);
@@ -59,19 +61,20 @@ public class Pioche {
 
         }else{      //Utiliser IntervallePresence pour disperser les cartes
 
-            aAjouter.addAll(pioche.subList(0, pExtension.getIntervallePresence()));
-            pioche = new ArrayList<>(pioche.subList(pExtension.getIntervallePresence(),pioche.size()));
-
             for(Carte c : pExtension.getCartes()){
                 for(int i=0; i<c.getNombreExemplaire(); i++)
                     aAjouter.add(c);
             }
 
+            int taille = pExtension.getIntervallePresence()-aAjouter.size();
+
+            aAjouter.addAll(pioche.subList(0, taille));
+            pioche = new ArrayList<>(pioche.subList(taille,pioche.size()));
+
             Collections.shuffle(aAjouter);
             Collections.shuffle(aAjouter);
 
             pioche.addAll(0,aAjouter);
-
         }
 
         //Les cartes pouvant declencher des extensions doivent etre au debut

@@ -6,7 +6,6 @@ import Outil.FichierManager;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.util.ArrayList;
 
 public class PanelStat extends JPanel {
@@ -51,7 +50,9 @@ public class PanelStat extends JPanel {
         int increment = 93;
         for(int i=0; i<slotImageStats.size(); i++){
 
-            int hauteur = (int) (stats[i] * 0.74);      //74 c'est la taille de l'image
+            int max = controlleur.getMaxStat();
+
+            int hauteur = (int) (stats[i] * 74 / max);      //74 c'est la taille de l'image
 
             Image image = slotImageStats.get(i);
             g.drawImage(image, increment, 71+74-hauteur,74,hauteur,null);
@@ -67,8 +68,8 @@ public class PanelStat extends JPanel {
             if(effet[i]!=0){
                 Image image = slotImageEffet.get(i);
                 g.drawImage(image, increment, 47,null);
-                increment+=80;
             }
+            increment+=80;
         }
 
     }
