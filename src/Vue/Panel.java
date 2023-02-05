@@ -12,6 +12,7 @@ import java.awt.event.KeyListener;
 public class Panel extends JPanel {
 
     PanelStat panelStat;
+    PanelScore panelScore;
     JLabel cardPicture;
     JLabel fondCarte;
     JTextArea descriptifTextArea;
@@ -35,6 +36,10 @@ public class Panel extends JPanel {
         setLayout(null);
 
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
+
+        panelScore = new PanelScore();
+        panelScore.setBackground(Color.blue);
+        add(panelScore);
 
         choix1 = new PanelChoix("flechegauche.png");
         add(choix1);
@@ -90,6 +95,8 @@ public class Panel extends JPanel {
                         jeuTermine = controlleur.verifierJeuFini();
 
                         majTexte();
+                    } else if (jeuTermine == controlleur.verifierJeuFini()){
+                        panelScore.afficherScore();
                     }
                 }
 
