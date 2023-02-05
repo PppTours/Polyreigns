@@ -85,18 +85,26 @@ public class Panel extends JPanel {
             @Override
             public void keyTyped(KeyEvent e) {
 
-                if (e.getKeyChar() == KeyEvent.VK_ENTER){
-                    if(controlleur.piocherCarte()){
-                        panelStat.repaint();
-                        scoreTextfield.setText("Score : "+controlleur.getScore());
-                        effetEcriture.stopEffet();
-                        effetEcriture = new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte());
-                        effetEcriture.start();
-                        jeuTermine = controlleur.verifierJeuFini();
+                if(jeuTermine==false){
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                        if(controlleur.piocherCarte()) {
+                            panelStat.repaint();
+                            scoreTextfield.setText("Score : " + controlleur.getScore());
+                            effetEcriture.stopEffet();
+                            effetEcriture = new EffetEcriture(descriptifTextArea, controlleur.getDescriptionCarte());
+                            effetEcriture.start();
+                            jeuTermine = controlleur.verifierJeuFini();
 
-                        majTexte();
-                    } else if (jeuTermine == controlleur.verifierJeuFini()){
-                        panelScore.afficherScore();
+                            majTexte();
+
+                            if (jeuTermine)
+                                panelScore.afficherScore();
+                        }
+                    }
+                }else {
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                        controlleur.donnerNomJoueur(panelScore.getNom());
+                        System.exit(0);
                     }
                 }
 
@@ -114,6 +122,19 @@ public class Panel extends JPanel {
                         controlleur.selectionnerChoix(2);
                         previewChoix2();
                         panelStat.repaint();
+                    }
+                }else {
+                    if (e.getKeyChar() == 'd') {
+                        panelScore.incremeterIndiceSelection();
+                    }
+                    if (e.getKeyChar() == 'q') {
+                        panelScore.decrementerIndiceSelection();
+                    }
+                    if (e.getKeyChar() == 'z') {
+                        panelScore.incrementeLettre();
+                    }
+                    if (e.getKeyChar() == 'x') {
+                        panelScore.decrementeLettre();
                     }
                 }
 

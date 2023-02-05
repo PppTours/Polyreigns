@@ -24,7 +24,10 @@ public class MeilleurJoueur {
         MeilleurJoueur j = new MeilleurJoueur(nom,point);
         classement.add(j);
         classement.sort(Comparator.comparingInt(o -> o.score));
-        classement = (ArrayList<MeilleurJoueur>) classement.subList(0,10);
+
+        int taille = Math.min(classement.size(), 10);
+
+        classement = new ArrayList<>(classement.subList(0,taille));
 
     }
 

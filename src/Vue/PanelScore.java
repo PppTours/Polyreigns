@@ -4,22 +4,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import Controlleur.Controlleur;
+import Outil.RouletteTextField;
 
 
-public class PanelScore extends JPanel implements ComponentListener {
+public class PanelScore extends JPanel {
 
     Controlleur controlleur;
 
     JLabel score;
-    JLabel firstLetter;
-    JLabel secondLetter;
-    JLabel thirdLetter;
+    RouletteTextField firstLetter;
+    RouletteTextField secondLetter;
+    RouletteTextField thirdLetter;
+
+    int indiceSelection = 1;
 
     public PanelScore() {
         setLayout(null);
-        setBackground(Color.yellow);
+        setBackground(Color.DARK_GRAY);
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
         setSize(300,200);
 
         controlleur = new Controlleur();
@@ -27,14 +33,16 @@ public class PanelScore extends JPanel implements ComponentListener {
         score = new JLabel();
         add(score);
 
-        secondLetter = new JLabel();
+        secondLetter = new RouletteTextField();
         add(secondLetter);
 
-        firstLetter = new JLabel();
+        firstLetter = new RouletteTextField();
         add(firstLetter);
 
-        thirdLetter = new JLabel();
+        thirdLetter = new RouletteTextField();
         add(thirdLetter);
+
+        setVisible(false);
 
     }
 
@@ -43,45 +51,75 @@ public class PanelScore extends JPanel implements ComponentListener {
         score.setText("Score : " + controlleur.getScore());
         score.setSize(120,50);
         score.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
+        score.setForeground(Color.white);
         score.setLocation(getWidth()/2-score.getWidth()/2, 0);
 
         secondLetter.setText("A");
-        secondLetter.setSize(50,100);
+        secondLetter.setSize(50,70);
         secondLetter.setLocation(getWidth()/2-secondLetter.getWidth()/2,getHeight()/2-secondLetter.getHeight()/2);
-        secondLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
 
         firstLetter.setText("A");
-        firstLetter.setSize(50,100);
+        firstLetter.setSize(50,70);
         firstLetter.setLocation(secondLetter.getX()-firstLetter.getWidth()-10, secondLetter.getY());
-        firstLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
 
         thirdLetter.setText("A");
-        thirdLetter.setSize(50,100);
+        thirdLetter.setSize(50,70);
         thirdLetter.setLocation(secondLetter.getX()+secondLetter.getWidth()+10, secondLetter.getY());
-        thirdLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
 
         setVisible(true);
-        System.out.println("score : "+controlleur.getScore());
+        firstLetter.selectionner();
+    }
+
+    public void majSelection(){
+
+        firstLetter.deselectionner();
+        secondLetter.deselectionner();
+        thirdLetter.deselectionner();
+
+        switch(indiceSelection){
+            case 1 -> firstLetter.selectionner();
+            case 2 -> secondLetter.selectionner();
+            case 3 -> thirdLetter.selectionner();
+        }
 
     }
 
-    @Override
-    public void componentResized(ComponentEvent e) {
+    public void incrementeLettre(){
+
+        switch(indiceSelection){
+            case 1 -> firstLetter.incremeter();
+            case 2 -> secondLetter.incremeter();
+            case 3 -> thirdLetter.incremeter();
+        }
 
     }
 
-    @Override
-    public void componentMoved(ComponentEvent e) {
+    public void decrementeLettre(){
+
+        switch(indiceSelection){
+            case 1 -> firstLetter.decrementer();
+            case 2 -> secondLetter.decrementer();
+            case 3 -> thirdLetter.decrementer();
+        }
 
     }
 
-    @Override
-    public void componentShown(ComponentEvent e) {
 
+    public void incremeterIndiceSelection(){
+        indiceSelection++;
+        if(indiceSelection>3)
+            indiceSelection = 3;
+        majSelection();
     }
 
-    @Override
-    public void componentHidden(ComponentEvent e) {
+    public void decrementerIndiceSelection(){
+        indiceSelection--;
+        if(indiceSelection<1)
+            indiceSelection = 1;
+        majSelection();
+    }
 
+    public String getNom() {
+        return firstLetter.getText()+secondLetter.getText()+thirdLetter.getText();
     }
 }

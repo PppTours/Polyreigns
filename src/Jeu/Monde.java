@@ -4,6 +4,7 @@ import Jeu.Carte.Carte;
 import Jeu.Carte.Choix;
 import Jeu.PaquetCarte.Extension;
 import Jeu.PaquetCarte.Pioche;
+import Outil.FichierManager;
 
 /**
  * Regroupe les principaux objets utilises pour le jeu
@@ -170,6 +171,7 @@ public class Monde {
      */
     public void enregistrerJoueur(String nom){
         MeilleurJoueur.ajouterJoueur(nom, Extension.getTotalScore());
+        FichierManager.exporterMeilleurJoueur();
     }
 
     public int getScore(){
