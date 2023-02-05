@@ -12,12 +12,13 @@ import java.awt.event.KeyListener;
 public class Panel extends JPanel {
 
     PanelStat panelStat;
+    PanelScore panelScore;
     JLabel cardPicture;
     JLabel fondCarte;
     JTextArea descriptifTextArea;
     JLabel scoreTextfield;
-    JLabel choix1;
-    JLabel choix2;
+    PanelChoix choix1;
+    PanelChoix choix2;
 
     Controlleur controlleur;
 
@@ -36,12 +37,8 @@ public class Panel extends JPanel {
         panelScore.setSize(500,300);
         panelScore.setBackground(Color.blue);
         panelScore.setLayout(null);
+        panelScore.setVisible(false);
         add(panelScore);
-
-        choix1 = new JLabel();
-        choix1.setSize(200,100);
-        choix1.setBorder(BorderFactory.createLineBorder(Color.black));
-        choix1.setIcon(new ImageIcon("game/image/flechegauche.png"));
 
         choix1 = new PanelChoix("flechegauche.png");
         add(choix1);
@@ -163,11 +160,9 @@ public class Panel extends JPanel {
 
     public void init(){
         controlleur.selectionnerChoix(1);
-        choix1.setText(controlleur.getTexteChoix());
         choix1.setVisible(true);
 
         controlleur.selectionnerChoix(2);
-        choix2.setText(controlleur.getTexteChoix());
         choix2.setVisible(true);
         controlleur.selectionnerChoix(0);
 
