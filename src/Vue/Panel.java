@@ -79,9 +79,9 @@ public class Panel extends JPanel {
                 if (e.getKeyChar() == KeyEvent.VK_ENTER){
                     if(controlleur.piocherCarte()){
                         panelStat.repaint();
-                        maj();
                         scoreTextfield.setText("Score : "+controlleur.getScore());
                         new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+                        majTexte();
                     }
                 }
 
@@ -100,6 +100,8 @@ public class Panel extends JPanel {
                     panelStat.repaint();
                 }
 
+                repaint();
+
             }
 
             @Override
@@ -107,14 +109,16 @@ public class Panel extends JPanel {
                 if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
                     maj();
                     panelStat.repaint();
-                    init();
+                    controlleur.selectionnerChoix(0);
+                    choix1.setVisible(true);
+                    choix2.setVisible(true);
                 }
             }
         });
 
         new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
 
-        init();
+        majTexte();
 
     }
     public void maj(){
@@ -129,17 +133,15 @@ public class Panel extends JPanel {
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
     }
 
+    public void majTexte(){
+        choix1.changerTexte(controlleur.getTexteChoixGauche());
+        choix2.changerTexte(controlleur.getTexteChoixDroite());
+
+    }
+
     public void init(){
-        controlleur.selectionnerChoix(1);
-        choix1.changerTexte(controlleur.getTexteChoix());
         choix1.setVisible(true);
-
-        controlleur.selectionnerChoix(2);
-        choix2.changerTexte(controlleur.getTexteChoix());
         choix2.setVisible(true);
-
-        controlleur.selectionnerChoix(0);
-
     }
 
     public void previewChoix1(){

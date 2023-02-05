@@ -14,12 +14,12 @@ public class PanelChoix extends JPanel {
 
         setBackground(new Color(0,0,0,0));
 
-        Font f = new Font(Font.SANS_SERIF, Font.BOLD,14);
+        Font f = new Font(Font.SANS_SERIF, Font.BOLD,15);
 
         image = new JLabel();
         image.setIcon(new ImageIcon(FichierManager.chargerImage(pImage)));
 
-        setSize(100,200);
+        setSize(140,200);
 
         textArea = new JTextArea();
         textArea.setBackground(new Color(0,0,0,0));
@@ -30,11 +30,11 @@ public class PanelChoix extends JPanel {
         add(image);
         add(textArea);
 
+
     }
 
     public void changerTexte(String pText){
         textArea.setText(pText);
-        repaint();
     }
 
 }
