@@ -119,7 +119,7 @@ public class Monde {
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous n'avez plus d'argent" +
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous n'avez plus d'argent " +
                     "et vous ne pouvez pas continuer votre vie d'etudiant, vous allez devoir trouver un travail a MacDo.",
                     gaucheFin,droiteFin,1);
 
@@ -131,7 +131,7 @@ public class Monde {
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
             Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous avez lamentablement échoué." +
-                    "Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.",
+                    " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.",
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();

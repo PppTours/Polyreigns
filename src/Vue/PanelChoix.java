@@ -19,7 +19,7 @@ public class PanelChoix extends JPanel {
         image = new JLabel();
         image.setIcon(new ImageIcon(FichierManager.chargerImage(pImage)));
 
-        setSize(140,200);
+        setSize(160,200);
 
         textArea = new JTextArea();
         textArea.setBackground(new Color(0,0,0,0));
@@ -29,7 +29,6 @@ public class PanelChoix extends JPanel {
 
         add(image);
         add(textArea);
-
 
     }
 

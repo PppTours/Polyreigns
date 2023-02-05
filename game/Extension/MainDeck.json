@@ -10,8 +10,8 @@
     "occurence" : 2
   },
   {"id" : 3, "descriptif" : "Le BDE organise une soirée la veille d'un examen important, que décidez-vous ?",
-    "choix1" : {"text" : "Participer à la soirée", "stats" : [0,0,-5,10]},
-    "choix2" : {"text" : "Réviser", "stats" : [-5,-5,10,0]},
+    "choix1" : {"text" : "Participer à la soirée", "stats" : [-5,-5,10,-5]},
+    "choix2" : {"text" : "Réviser", "stats" : [0,0,-5,10]},
     "occurence" : 2
   },
   {"id" : 4, "descriptif" : "Est-ce que la K'fet c'était mieux avant ?",
@@ -44,9 +44,9 @@
     "choix2" : {"text" : "Dormir", "stats" : [0,10,0,0]},
     "occurence" : 2
   },
-  {"id" : 10, "descriptif" : "Vos partenaires de projet ne travaillent presque pas, le projet va prendre du retard...",
-    "choix1" : {"text" : "Travailler d'avantage", "stats" : [0,-5,0,5]},
-    "choix2" : {"text" : "Se plaindre au prof", "stats" : [0,0,-5,0]},
+  {"id" : 10, "descriptif" : "Vos partenaires de projet ne travaillent pas, le projet va prendre du retard...",
+    "choix1" : {"text" : "Travailler d'avantage", "stats" : [0,-10,0,5]},
+    "choix2" : {"text" : "Se plaindre au prof", "stats" : [0,0,-10,0]},
     "occurence" : 2
   },
   {"id" : 11, "descriptif" : "Ton/Ta parrain/marraine te donne ses fiches de révisions.",
@@ -87,7 +87,7 @@
   {"id" : 18 ,"descriptif" : "Coup de chance, vous trouvez un billet de 10€ par terre !",
     "choix1" : {"text" : "YES", "stats" : [5,0,0,0]},
     "choix2" : {"text" : "Je vais pouvoir manger ce soir", "stats" : [5,0,0,0]},
-    "occurence" : 2
+    "occurence" : 1
   },
   {"id" : 19 ,"descriptif" : "Il n'y a personne dans le bus. Peut-être pouvez-vous 'oublier' de payer votre ticket ?",
     "choix1" : {"text" : "Oh non, j'ai oublié !", "stats" : [5,0,0,0]},
@@ -95,14 +95,14 @@
     "occurence" : 3
   },
   {"id" : 20 ,"descriptif" : "Votre ami vous propose 10€ pour que vous finissiez son projet à sa place",
-    "choix1" : {"text" : "J'accepte !", "stats" : [5,-5,5,0]},
+    "choix1" : {"text" : "J'accepte !", "stats" : [5,-10,5,0]},
     "choix2" : {"text" : "Flemme de ouf", "stats" : [0,0,-10,0]},
     "occurence" : 1
   },
   {"id" : 21 ,"descriptif" : "Vous n'avez pas cours ce matin ! Ca part sur une grasse mat'.",
     "choix1" : {"text" : "ZZZZZ", "stats" : [0,15,0,0]},
     "choix2" : {"text" : "Nous rompichâmes", "stats" : [0,15,0,0]},
-    "occurence" : 3
+    "occurence" : 2
   },
   {"id" : 22 ,"descriptif" : "Ce midi vous avez la turbo dalle. Mangez-vous plus que d'habitude ?",
     "choix1" : {"text" : "OUI J'AI FAIM", "stats" : [-5,5,0,0]},
@@ -150,12 +150,12 @@
     "occurence" : 1
   },
   {"id" : 31 ,"descriptif" : "Pour tenter de sortir de votre médiocrité affligeante, vous décidez ...",
-    "choix1" : {"text" : "D'aller a la salle", "stats" : [-5,-5,10,0]},
+    "choix1" : {"text" : "D'aller a la salle", "stats" : [-5,-5,5,0]},
     "choix2" : {"text" : "D'avoir de meilleur note", "stats" : [0,-5,0,5]},
     "occurence" : 2
   },
   {"id" : 32 ,"descriptif" : "Vous avez beaucoup de mal dans une matière, prendre des cours particuliers ?",
-    "choix1" : {"text" : "Oui", "stats" : [-10,0,10,10]},
+    "choix1" : {"text" : "Oui", "stats" : [-10,0,0,10]},
     "choix2" : {"text" : "Non", "stats" : [0,0,0,-10]},
     "occurence" : 2
   },
@@ -167,6 +167,11 @@
   {"id" : 34 ,"descriptif" : "PO-POPO-LYTECH",
     "choix1" : {"text" : "PO-PO-PO-POLY-TECH-EU", "stats" : [0,0,5,0]},
     "choix2" : {"text" : "Hein ?", "stats" : [0,0,0,0]},
+    "occurence" : 1
+  },
+  {"id" : 35 ,"descriptif" : "Sans faire exprès, vous avez rayé le portable d'un de vos poly-pote... Vous lui payez le changement de son écran ?",
+    "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,0,-15,0]},
     "occurence" : 1
   }
 ]}
