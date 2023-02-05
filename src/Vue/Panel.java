@@ -12,6 +12,7 @@ import java.awt.event.KeyListener;
 public class Panel extends JPanel {
 
     PanelStat panelStat;
+    PanelScore panelScore;
     JLabel cardPicture;
     JLabel fondCarte;
     JTextArea descriptifTextArea;
@@ -35,6 +36,13 @@ public class Panel extends JPanel {
         setLayout(null);
 
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
+
+        panelScore = new PanelScore();
+        panelScore.setSize(500,300);
+        panelScore.setBackground(Color.blue);
+        panelScore.setLayout(null);
+        panelScore.setVisible(false);
+        add(panelScore);
 
         choix1 = new PanelChoix("flechegauche.png");
         add(choix1);
@@ -81,6 +89,16 @@ public class Panel extends JPanel {
             public void keyTyped(KeyEvent e) {
 
                 if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                    scoreTextfield.setText("Score : "+controlleur.getScore());
+                    if (controlleur.verifierJeuFini()){
+
+                    }
+                    else {
+                        controlleur.piocherCarte();
+                        maj();}
+                    controlleur.piocherCarte();
+                    panelStat.repaint();
+                    maj();
                     if(controlleur.piocherCarte()){
                         panelStat.repaint();
                         scoreTextfield.setText("Score : "+controlleur.getScore());
@@ -146,6 +164,7 @@ public class Panel extends JPanel {
         choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
+        panelScore.setLocation((getWidth()-panelScore.getWidth())/2,(getHeight()-panelScore.getHeight())/2);
     }
 
     public void majTexte(){

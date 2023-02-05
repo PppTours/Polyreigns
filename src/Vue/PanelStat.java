@@ -73,6 +73,4 @@ public class PanelStat extends JPanel {
 
     }
 
-
-
 }
