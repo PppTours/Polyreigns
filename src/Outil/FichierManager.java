@@ -56,8 +56,6 @@ public class FichierManager {
 
     public static void importerTouteLesCartes(){
 
-        String nomDeckPrincipal = "MainDeck";
-
         File f = new File("game/Extension");
 
         String[] chemins = f.list();
@@ -75,6 +73,8 @@ public class FichierManager {
 
     private static void importerExtension(String nomFichier){
 
+        String nomDeckPrincipal = "MainDeck";
+
         JSONParser jsonParser = new JSONParser();
 
         try (FileReader reader = new FileReader("game/Extension/"+nomFichier)) {
@@ -82,7 +82,13 @@ public class FichierManager {
 
             JSONArray cartes = (JSONArray) obj.get("cartes");
 
-            Extension extension = new Extension(nomFichier.substring(0,nomFichier.indexOf('.')),-1);
+            String nomExtension = nomFichier.substring(0,nomFichier.indexOf('.'));
+
+            int intervalle = 20;
+            if(nomExtension.equals(nomDeckPrincipal))
+                intervalle = -1;
+
+            Extension extension = new Extension(nomExtension,intervalle);
 
             for(Object o : cartes){
 
@@ -136,7 +142,9 @@ public class FichierManager {
                 int occurence = ((Long)object.get("occurence")).intValue();
                 String description = (String) object.get("descriptif");
 
-                extension.getCartes().add(new Carte(extension,description,choixDroite,choixGauche,occurence));
+                Carte c = new Carte(extension,description,choixDroite,choixGauche,occurence);
+
+                extension.getCartes().add(c);
             }
 
         } catch (ParseException | IOException e) {

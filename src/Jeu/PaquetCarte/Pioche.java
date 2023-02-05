@@ -40,7 +40,9 @@ public class Pioche {
         }
 
         //On garde la premiere carte de cote car elle est deja affichee
-        Carte premiere = pioche.remove(0);
+        Carte premiere = null;
+        if(pioche.size()>0)
+             premiere = pioche.remove(0);
 
         ArrayList<Carte> aAjouter = new ArrayList<>();
 
@@ -52,18 +54,20 @@ public class Pioche {
             }
 
             pioche.addAll(aAjouter);
-            Collections.shuffle(aAjouter);
+            Collections.shuffle(pioche);
+            Collections.shuffle(pioche);
 
-        }else{      //Utiliser InterVallePresence pour disperser les cartes
+        }else{      //Utiliser IntervallePresence pour disperser les cartes
 
             aAjouter.addAll(pioche.subList(0, pExtension.getIntervallePresence()));
-            pioche = (ArrayList<Carte>) pioche.subList(pExtension.getIntervallePresence(),pioche.size());
+            pioche = new ArrayList<>(pioche.subList(pExtension.getIntervallePresence(),pioche.size()));
 
             for(Carte c : pExtension.getCartes()){
                 for(int i=0; i<c.getNombreExemplaire(); i++)
                     aAjouter.add(c);
             }
 
+            Collections.shuffle(aAjouter);
             Collections.shuffle(aAjouter);
 
             pioche.addAll(0,aAjouter);
@@ -78,18 +82,19 @@ public class Pioche {
             Carte c = pioche.get(i);
 
             //Si la carte represente une extension non integree, c'est que c'est une carte declencheuse
-            if(c.getExtension().isDejaIntegreePioche()==false){
+            if(c.getExtension().isDejaIntegreePioche()==false && c.getExtension()!=pExtension){
                 carteDeclencheuse.add(pioche.remove(i));
                 i--;
             }
         }
 
         carteDeclencheuse.addAll(pioche.subList(0, 20));
-        pioche = (ArrayList<Carte>) pioche.subList(20,pioche.size());
+        pioche = new ArrayList<>(pioche.subList(20,pioche.size()));
         Collections.shuffle(carteDeclencheuse);
         pioche.addAll(0,carteDeclencheuse);
 
-        pioche.add(0,premiere);
+        if(premiere!=null)
+            pioche.add(0,premiere);
 
     }
 
