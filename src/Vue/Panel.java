@@ -76,14 +76,7 @@ public class Panel extends JPanel {
             @Override
             public void keyTyped(KeyEvent e) {
 
-
-                if (e.getKeyChar() == 'q') {
-                    controlleur.selectionnerChoix(1);
-                    previewChoix1();
-                } else if (e.getKeyChar() == 'd') {
-                    controlleur.selectionnerChoix(2);
-                    previewChoix2();
-                } else if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                if (e.getKeyChar() == KeyEvent.VK_ENTER){
                     controlleur.piocherCarte();
                     maj();
                 }
@@ -93,11 +86,21 @@ public class Panel extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
 
+                if (e.getKeyChar() == 'q') {
+                    controlleur.selectionnerChoix(1);
+                    previewChoix1();
+                } else if (e.getKeyChar() == 'd') {
+                    controlleur.selectionnerChoix(2);
+                    previewChoix2();
+                }
+
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-
+                if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
+                    maj();
+                }
             }
         });
 
