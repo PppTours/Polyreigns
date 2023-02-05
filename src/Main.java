@@ -1,4 +1,3 @@
-import Outil.FichierManager;
 import Vue.Fenetre;
 
 public class Main {

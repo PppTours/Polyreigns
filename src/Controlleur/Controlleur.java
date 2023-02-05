@@ -7,6 +7,10 @@ public class Controlleur {
 
     Monde monde;
 
+    public Controlleur(){
+        monde = new Monde();
+    }
+
     /**
      * Constructeur de Controlleur, instancie le monde du jeu
      */
@@ -48,10 +52,10 @@ public class Controlleur {
 
     /**
      * Selectionne un choix
-     * @param pChoixDroit true si choix droit, false pour le gauche
+     * @param choix == 1 si choix gauche, == 2 pour le droit
      */
-    public void selectionnerChoix(boolean pChoixDroit){
-        monde.selectionnerChoix(pChoixDroit);
+    public void selectionnerChoix(int choix){
+        monde.selectionnerChoix(choix);
     }
 
     /**
@@ -77,10 +81,12 @@ public class Controlleur {
     public int[] getEffetCarte(){
         int[] tab = new int[4];
 
-        tab[0] = monde.getChoixSelectionne().getEffetArgent();
-        tab[1] = monde.getChoixSelectionne().getEffetEnergie();
-        tab[2] = monde.getChoixSelectionne().getEffetVieSociale();
-        tab[3] = monde.getChoixSelectionne().getEffetNote();
+        if(monde.getChoixSelectionne()!=null){
+            tab[0] = monde.getChoixSelectionne().getEffetArgent();
+            tab[1] = monde.getChoixSelectionne().getEffetEnergie();
+            tab[2] = monde.getChoixSelectionne().getEffetVieSociale();
+            tab[3] = monde.getChoixSelectionne().getEffetNote();
+        }
 
         return tab;
     }

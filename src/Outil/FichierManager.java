@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.*;
 
@@ -153,9 +154,14 @@ public class FichierManager {
 
     }
 
-    public Image chargerImage(String pChemin){
-
-        return null;
+    public static Image chargerImage(String pNom){
+        Image image = null;
+        try {
+            image = ImageIO.read(new File("game/image/"+pNom));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return image;
     }
 
 }

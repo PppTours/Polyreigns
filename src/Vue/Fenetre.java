@@ -9,35 +9,43 @@ public class Fenetre extends JFrame {
 
     Panel panel;
 
-    int width = 600;
-    int height = 700;
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    int width = screenSize.width;
+    int height = screenSize.height;
+    FlowLayout flowLayout;
 
     public Fenetre(){
 
-        //setSize(600,700);
-        setContentPane(panel = new Panel());
+        this.setLayout(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice device = graphics.getDefaultScreenDevice();
+        setSize(width, height);
+
+        panel = new Panel();
+        panel.setSize(height, height);
+        add(panel);
+
+        getContentPane().setBackground(Color.BLACK);
         setUndecorated(true);
         setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         device.setFullScreenWindow(this);
-
 
         panel.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
                 width = e.getComponent().getWidth();
                 height = e.getComponent().getHeight();
+                panel.setLocation((getWidth()-panel.getWidth())/2,0);
 
                 // panel.maj();
             }
             @Override
             public void componentMoved(ComponentEvent e) {
-                System.out.println("Moved to " + e.getComponent().getLocation());
+                //System.out.println("Moved to " + e.getComponent().getLocation());
             }
         });
-
+        panel.setLocation((getWidth()-panel.getWidth())/2,0);
+        panel.maj();
     }
-
 }

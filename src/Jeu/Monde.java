@@ -66,15 +66,15 @@ public class Monde {
 
     /**
      * Preselectionne un choix pour une carte
-     * @param pChoixDroit true si c'est le choix droite, false pour le gauche
+     * @param choix==2 si c'est le choix droite, ==1 pour le gauche
      */
-    public void selectionnerChoix(boolean pChoixDroit){
+    public void selectionnerChoix(int choix){
 
         Carte carte = pioche.premiereCarte();
 
-        if(pChoixDroit)
+        if(choix==2)
             choixSelectionne = carte.getChoixDroite();
-        else
+        else if(choix==1)
             choixSelectionne = carte.getChoixGauche();
 
     }
