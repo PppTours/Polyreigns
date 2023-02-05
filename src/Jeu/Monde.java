@@ -118,8 +118,8 @@ public class Monde {
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"Vous n'avez plus d'argent" +
-                    "et vous ne pouvez pas continuer votre vie d'etudiant, vous allez devoir trouver un travail a macdo.",
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous n'avez plus d'argent" +
+                    "et vous ne pouvez pas continuer votre vie d'etudiant, vous allez devoir trouver un travail a MacDo.",
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();
@@ -129,7 +129,8 @@ public class Monde {
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"eztqrysthdjhg",
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous avez lamentablement échoué." +
+                    "Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.",
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();
@@ -139,7 +140,8 @@ public class Monde {
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"aezrrgtrhyj",
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous faites un burn out" +
+                    " et avait été interné dans un hopital psychiatrique :-)",
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();
@@ -149,7 +151,9 @@ public class Monde {
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
             Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("base"),"Vefrgthyj",
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous passez tellement " +
+                    "inaperçu auprès de tout le monde que même Polytech a oublié votre existence, vous n'êtes plus inscrit " +
+                    "en tant qu'élève.",
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();

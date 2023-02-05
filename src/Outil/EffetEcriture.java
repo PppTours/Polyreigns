@@ -9,6 +9,8 @@ public class EffetEcriture extends Thread{
     String texteAEcrire;
     JTextArea textArea;
 
+    private boolean stop = false;
+
     public EffetEcriture(JTextArea pTextArea, String pTexte){
         texteAEcrire = pTexte;
         textArea = pTextArea;
@@ -19,15 +21,23 @@ public class EffetEcriture extends Thread{
 
         for(int i=0; i<=texteAEcrire.length(); i++){
 
+            if(stop)
+                break;
+
             try {
-                sleep(1000/lettreParSeconde);
                 textArea.setText(texteAEcrire.substring(0,i));
+                sleep(1000/lettreParSeconde);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
 
         }
 
+    }
+
+    public void stopEffet(){
+        stop = true;
+        texteAEcrire = "";
     }
 
 }

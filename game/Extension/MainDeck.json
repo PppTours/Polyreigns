@@ -159,7 +159,7 @@
     "choix2" : {"text" : "Non", "stats" : [0,0,0,-10]},
     "occurence" : 2
   },
-  {"id" : 33 ,"descriptif" : "Votre ordinateur a un gros probleme. Le mettre a zero et perdre tous votre travail, ou l'emmener chez le reparateur ?",
+  {"id" : 33 ,"descriptif" : "Votre ordinateur a un gros probleme. Le mettre a zero et perdre tout votre travail, ou l'emmener chez le reparateur ?",
     "choix1" : {"text" : "Remise a zero", "stats" : [0,0,0,-15]},
     "choix2" : {"text" : "Reparateur", "stats" : [-15,0,0,0]},
     "occurence" : 1

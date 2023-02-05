@@ -23,6 +23,8 @@ public class Panel extends JPanel {
 
     Image fond;
 
+    EffetEcriture effetEcriture;
+
     public Panel(){
 
         controlleur = new Controlleur();
@@ -54,7 +56,7 @@ public class Panel extends JPanel {
         add(fondCarte);
 
         descriptifTextArea = new JTextArea("Descriptif de la carte");
-        descriptifTextArea.setSize(450,100);
+        descriptifTextArea.setSize(450,150);
         descriptifTextArea.setEditable(false);
         descriptifTextArea.setLineWrap(true);
         descriptifTextArea.setWrapStyleWord(true);
@@ -80,7 +82,9 @@ public class Panel extends JPanel {
                     if(controlleur.piocherCarte()){
                         panelStat.repaint();
                         scoreTextfield.setText("Score : "+controlleur.getScore());
-                        new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+                        effetEcriture.stopEffet();
+                        effetEcriture = new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte());
+                        effetEcriture.start();
                         majTexte();
                     }
                 }
@@ -116,7 +120,8 @@ public class Panel extends JPanel {
             }
         });
 
-        new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+        effetEcriture = new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte());
+        effetEcriture.start();
 
         majTexte();
 
@@ -139,10 +144,6 @@ public class Panel extends JPanel {
 
     }
 
-    public void init(){
-        choix1.setVisible(true);
-        choix2.setVisible(true);
-    }
 
     public void previewChoix1(){
         maj();

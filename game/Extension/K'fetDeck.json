@@ -11,7 +11,7 @@
   },
   {"id" : 2 , "descriptif" : "Vos camarades ont besoin d'aide pour le service de ce midi, ils sont surchargés.",
     "choix1" : {"text" : "Les aider", "stats" : [0,-5,0,0]},
-    "choix2" : {"text" : "Faire semblant de n'avoir rien vu", "stats" : [0,0,0,-5]},
+    "choix2" : {"text" : "Faire semblant de n'avoir rien vu", "stats" : [0,0,-5,0]},
     "occurence" : 2
   },
   {"id" : 3 , "descriptif" : "Vous avez oublié d'encaisser votre repas de ce midi.",
