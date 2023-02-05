@@ -1,6 +1,7 @@
 package Controlleur;
 
 import Jeu.Carte.Carte;
+import Jeu.Joueur;
 import Jeu.Monde;
 
 public class Controlleur {
@@ -112,5 +113,7 @@ public class Controlleur {
     }
 
 
-
+    public int getMaxStat() {
+        return Joueur.maxStat;
+    }
 }

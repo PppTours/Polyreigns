@@ -90,9 +90,11 @@ public class Panel extends JPanel {
                 if (e.getKeyChar() == 'q') {
                     controlleur.selectionnerChoix(1);
                     previewChoix1();
+                    panelStat.repaint();
                 } else if (e.getKeyChar() == 'd') {
                     controlleur.selectionnerChoix(2);
                     previewChoix2();
+                    panelStat.repaint();
                 }
 
             }
@@ -101,9 +103,13 @@ public class Panel extends JPanel {
             public void keyReleased(KeyEvent e) {
                 if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
                     maj();
+                    panelStat.repaint();
+                    init();
                 }
             }
         });
+
+        init();
 
     }
     public void maj(){
@@ -113,6 +119,12 @@ public class Panel extends JPanel {
         descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,fondCarte.getY()+fondCarte.getHeight());
         descriptifTextArea.setText(controlleur.getDescriptionCarte());
         choix1.setLocation((int) (fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+(fondCarte.getHeight()-choix1.getHeight())/2);
+        choix2.setLocation((int) (fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
+
+        panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
+    }
+
+    public void init(){
         controlleur.selectionnerChoix(1);
         choix1.setText(controlleur.getTexteChoix());
         choix1.setVisible(true);
@@ -120,7 +132,7 @@ public class Panel extends JPanel {
         controlleur.selectionnerChoix(2);
         choix2.setText(controlleur.getTexteChoix());
         choix2.setVisible(true);
-        panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
+        controlleur.selectionnerChoix(0);
 
     }
 

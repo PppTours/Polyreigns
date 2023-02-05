@@ -79,10 +79,12 @@ public class Monde {
         if(carte == null)
             return;
 
-        if(choix==2)
-            choixSelectionne = carte.getChoixDroite();
-        else if(choix==1)
+        if(choix==1)
             choixSelectionne = carte.getChoixGauche();
+        else if(choix==2)
+            choixSelectionne = carte.getChoixDroite();
+        else if(choix==0)
+            choixSelectionne = null;
 
     }
 

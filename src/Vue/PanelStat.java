@@ -3,7 +3,6 @@ package Vue;
 import Controlleur.Controlleur;
 import Outil.FichierManager;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
