@@ -38,7 +38,7 @@ public class Panel extends JPanel {
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
         panelScore = new PanelScore();
-        panelScore.setBackground(Color.blue);
+        //panelScore.setVisible(false);
         add(panelScore);
 
         choix1 = new PanelChoix("flechegauche.png");
@@ -153,6 +153,7 @@ public class Panel extends JPanel {
         choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
+        panelScore.setLocation((getWidth()-panelScore.getWidth())/2,(getHeight()-panelScore.getHeight())/2);
     }
 
     public void majTexte(){

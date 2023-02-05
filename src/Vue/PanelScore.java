@@ -18,8 +18,11 @@ public class PanelScore extends JPanel implements ComponentListener {
     JLabel thirdLetter;
 
     public PanelScore() {
+        setLayout(null);
+        setBackground(Color.yellow);
+        setSize(300,200);
+
         controlleur = new Controlleur();
-        setBackground(Color.blue);
 
         score = new JLabel();
         add(score);
@@ -36,20 +39,25 @@ public class PanelScore extends JPanel implements ComponentListener {
     }
 
     public void afficherScore(){
+
         score.setText("Score : " + controlleur.getScore());
         score.setSize(120,50);
         score.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
-
-        firstLetter.setText("A");
-        firstLetter.setSize(50,100);
-        firstLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
+        score.setLocation(getWidth()/2-score.getWidth()/2, 0);
 
         secondLetter.setText("A");
         secondLetter.setSize(50,100);
+        secondLetter.setLocation(getWidth()/2-secondLetter.getWidth()/2,getHeight()/2-secondLetter.getHeight()/2);
         secondLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
+
+        firstLetter.setText("A");
+        firstLetter.setSize(50,100);
+        firstLetter.setLocation(secondLetter.getX()-firstLetter.getWidth()-10, secondLetter.getY());
+        firstLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
 
         thirdLetter.setText("A");
         thirdLetter.setSize(50,100);
+        thirdLetter.setLocation(secondLetter.getX()+secondLetter.getWidth()+10, secondLetter.getY());
         thirdLetter.setFont(new Font(Font.SANS_SERIF, Font.BOLD,20));
 
         setVisible(true);
@@ -59,11 +67,6 @@ public class PanelScore extends JPanel implements ComponentListener {
 
     @Override
     public void componentResized(ComponentEvent e) {
-        secondLetter.setLocation(getX() + getWidth()/2-score.getWidth()/2, getY()+getHeight()/2-score.getHeight()/2);
-        System.out.println(getX());
-        firstLetter.setLocation(secondLetter.getX()-firstLetter.getWidth()-10, secondLetter.getY());
-        thirdLetter.setLocation(secondLetter.getX()+secondLetter.getWidth()+10, secondLetter.getY());
-        score.setLocation(getX()+getWidth()/2-score.getWidth()/2, 0);
 
     }
 
