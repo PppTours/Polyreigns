@@ -57,11 +57,19 @@ public class Controlleur {
     }
 
     /**
-     * Recupere le texte associe au choix preselectionne
+     * Recupere le texte associe au choix droit
      * @return
      */
-    public String getTexteChoix(){
-        return monde.getChoixSelectionne().getReponse();
+    public String getTexteChoixDroite(){
+        return monde.premiereCarte().getChoixDroite().getReponse();
+    }
+
+    /**
+     * Recupere le texte associe au choix gauche
+     * @return
+     */
+    public String getTexteChoixGauche(){
+        return monde.premiereCarte().getChoixGauche().getReponse();
     }
 
     /**

@@ -64,7 +64,15 @@ public class Monde {
 
         verifierJeuFini();
 
-        choixSelectionne = null;
+        Carte prochaine = pioche.premiereCarte();
+
+        if(prochaine!=null){
+            if(choixSelectionne==carte.getChoixDroite()){
+                choixSelectionne = prochaine.getChoixDroite();
+            }
+            if(choixSelectionne==carte.getChoixGauche())
+                choixSelectionne = prochaine.getChoixGauche();
+        }
 
         return true;
 

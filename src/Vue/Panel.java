@@ -12,7 +12,6 @@ import java.awt.event.KeyListener;
 public class Panel extends JPanel {
 
     PanelStat panelStat;
-    PanelScore panelScore;
     JLabel cardPicture;
     JLabel fondCarte;
     JTextArea descriptifTextArea;
@@ -44,12 +43,10 @@ public class Panel extends JPanel {
         choix1.setBorder(BorderFactory.createLineBorder(Color.black));
         choix1.setIcon(new ImageIcon("game/image/flechegauche.png"));
 
+        choix1 = new PanelChoix("flechegauche.png");
         add(choix1);
 
-        choix2 = new JLabel();
-        choix2.setSize(200,100);
-        choix2.setBorder(BorderFactory.createLineBorder(Color.black));
-        choix2.setIcon(new ImageIcon("game/image/flechedroite.png"));
+        choix2 = new PanelChoix("flechedroite.png");
         add(choix2);
 
         scoreTextfield = new JLabel("Score : 0");
@@ -68,17 +65,20 @@ public class Panel extends JPanel {
         add(fondCarte);
 
         descriptifTextArea = new JTextArea("Descriptif de la carte");
-        descriptifTextArea.setSize(400,80);
+        descriptifTextArea.setSize(450,100);
         descriptifTextArea.setEditable(false);
         descriptifTextArea.setLineWrap(true);
         descriptifTextArea.setWrapStyleWord(true);
         descriptifTextArea.setForeground(Color.black);
         descriptifTextArea.setBackground(Color.gray);
+
         descriptifTextArea.setFont(f);
+
         add(descriptifTextArea);
 
         panelStat = new PanelStat(controlleur);
         add(panelStat);
+
 
         //Gestion des inputs
         setFocusable(true);
@@ -100,9 +100,9 @@ public class Panel extends JPanel {
                     maj();
                     if(controlleur.piocherCarte()){
                         panelStat.repaint();
-                        maj();
                         scoreTextfield.setText("Score : "+controlleur.getScore());
                         new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+                        majTexte();
                     }
                 }
 
@@ -121,6 +121,8 @@ public class Panel extends JPanel {
                     panelStat.repaint();
                 }
 
+                repaint();
+
             }
 
             @Override
@@ -128,14 +130,16 @@ public class Panel extends JPanel {
                 if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
                     maj();
                     panelStat.repaint();
-                    init();
+                    controlleur.selectionnerChoix(0);
+                    choix1.setVisible(true);
+                    choix2.setVisible(true);
                 }
             }
         });
 
         new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
 
-        init();
+        majTexte();
 
     }
     public void maj(){
@@ -144,11 +148,17 @@ public class Panel extends JPanel {
         fondCarte.setLocation((getWidth()-fondCarte.getWidth())/2,(getHeight()-fondCarte.getHeight())/2);
         descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,fondCarte.getY()+fondCarte.getHeight()+10);
 
-        choix1.setLocation((fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+(fondCarte.getHeight()-choix1.getHeight())/2);
-        choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
+        choix1.setLocation((fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix1.getHeight())/2);
+        choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
         panelScore.setLocation((getWidth()-panelScore.getWidth())/2,(getHeight()-panelScore.getHeight())/2);
+    }
+
+    public void majTexte(){
+        choix1.changerTexte(controlleur.getTexteChoixGauche());
+        choix2.changerTexte(controlleur.getTexteChoixDroite());
+
     }
 
     public void init(){
