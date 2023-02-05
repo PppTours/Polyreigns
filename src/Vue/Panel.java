@@ -74,16 +74,15 @@ public class Panel extends JPanel {
             @Override
             public void keyTyped(KeyEvent e) {
 
-                int choix = 0;
 
                 if (e.getKeyChar() == 'd') {
+                    controlleur.selectionnerChoix(1);
                     previewChoix1();
-                    choix = 1;
                 } else if (e.getKeyChar() == 'q') {
+                    controlleur.selectionnerChoix(2);
                     previewChoix2();
-                    choix = 2;
                 } else if (e.getKeyChar() == KeyEvent.VK_ENTER){
-                    controlleur.selectionnerChoix(choix);
+                    controlleur.piocherCarte();
                     maj();
                     choix1.setVisible(false);
                     choix2.setVisible(false);
@@ -118,6 +117,7 @@ public class Panel extends JPanel {
         maj();
         cardPicture.setLocation(cardPicture.getX() + 40, cardPicture.getY());
         choix1.setLocation(choix1.getX() + 20, choix1.getY());
+        choix1.setText(controlleur.getTexteChoix());
         choix1.setVisible(true);
         choix2.setVisible(false);
     }
@@ -125,6 +125,7 @@ public class Panel extends JPanel {
         maj();
         cardPicture.setLocation(cardPicture.getX() - 40, cardPicture.getY());
         choix2.setLocation(choix2.getX() - 20, choix2.getY());
+        choix2.setText(controlleur.getTexteChoix());
         choix1.setVisible(false);
         choix2.setVisible(true);
     }
