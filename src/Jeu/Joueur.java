@@ -10,6 +10,8 @@ public class Joueur {
     private int vieSociale;
     private int note;
 
+    private int maxStat = 70;
+
     public Joueur(){
 
         argent = 50;
@@ -23,7 +25,7 @@ public class Joueur {
     }
 
     public void setArgent(int argent) {
-        this.argent = argent;
+        this.argent = Math.min(argent, maxStat);
     }
 
     public int getEnergie() {
@@ -31,7 +33,7 @@ public class Joueur {
     }
 
     public void setEnergie(int energie) {
-        this.energie = energie;
+        this.energie = Math.min(energie, maxStat);
     }
 
     public int getVieSociale() {
@@ -39,7 +41,7 @@ public class Joueur {
     }
 
     public void setVieSociale(int vieSociale) {
-        this.vieSociale = vieSociale;
+        this.vieSociale = Math.min(vieSociale, maxStat);
     }
 
     public int getNote() {
@@ -47,6 +49,10 @@ public class Joueur {
     }
 
     public void setNote(int note) {
-        this.note = note;
+        this.note = Math.min(note, maxStat);
+    }
+
+    public int getMaxStat(){
+        return maxStat;
     }
 }

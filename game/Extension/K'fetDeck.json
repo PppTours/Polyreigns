@@ -1,5 +1,5 @@
 {"cartes" :  [
-  {"id" : 0 ,"descriptif" : "On vous propose le poste de préseident à la K'fet ! Mais rien que l'idée vous épuise déjà",
+  {"id" : 0 ,"descriptif" : "On vous propose le poste de président à la K'fet ! Mais rien que l'idée vous épuise déjà",
       "choix1" : {"text" : "Accepter", "stats" : [0,-5,5,0], "declencheur": 1},
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0], "declencheur": 0},
       "occurence" : 1
@@ -18,5 +18,15 @@
     "choix1" : {"text" : "Personne ne le saura...", "stats" : [0,0,0,0]},
     "choix2" : {"text" : "Je vais payer !", "stats" : [-5,0,0,0]},
     "occurence" : 2
+  },
+  {"id" : 4 , "descriptif" : "La K'fet a reçu un don anonyme. Vous partagez l'argent entre les membres, ou vous utilisez l'argent pour acheter un nouveau billard ?",
+    "choix1" : {"text" : "C'est NOTRE argent!", "stats" : [5,0,5,0]},
+    "choix2" : {"text" : "Nouveau billard", "stats" : [0,0,15,0]},
+    "occurence" : 1
+  },
+  {"id" : 5 , "descriptif" : "Après un coup mal placé, le tapis du billard est cassé et est inutilisable. Achetez vous un nouveau tapis ?",
+    "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,0,-10,0]},
+    "occurence" : 1
   }
 ]}

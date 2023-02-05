@@ -23,5 +23,10 @@
     "choix1" : {"text" : "Accepter", "stats" : [0,0,5,0]},
     "choix2" : {"text" : "Refuser poliment et réviser", "stats" : [0,0,0,5]},
     "occurence" : 1
+  },
+  {"id" : 5 , "descriptif" : "A la pause entre deux cours, Marius vient vous voir et vous offre un café!",
+    "choix1" : {"text" : "Merci!", "stats" : [0,5,0,0]},
+    "choix2" : {"text" : "Multumesc", "stats" : [0,5,0,0]},
+    "occurence" : 1
   }
 ]}

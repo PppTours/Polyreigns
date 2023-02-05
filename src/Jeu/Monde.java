@@ -60,6 +60,8 @@ public class Monde {
 
         verifierJeuFini();
 
+        choixSelectionne = null;
+
     }
 
     /**

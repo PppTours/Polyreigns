@@ -123,5 +123,20 @@
     "choix1" : {"text" : "Travailler serieusement", "stats" : [0,-5,0,5]},
     "choix2" : {"text" : "Google est mon ami", "stats" : [0,5,0,-5]},
     "occurence" : 2
+  },
+  {"id" : 26 ,"descriptif" : "Vous commencez à avoir un coup de barre... Vous prenez un petit café ?",
+    "choix1" : {"text" : "Oui", "stats" : [-5,5,0,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,-5,0,0]},
+    "occurence" : 2
+  },
+  {"id" : 27 ,"descriptif" : "Coup dur, c'est l'heure de payer votre loyer...",
+    "choix1" : {"text" : "Aie...", "stats" : [-15,0,0,0]},
+    "choix2" : {"text" : "Debut du regime a base de coquillettes", "stats" : [-15,0,0,0]},
+    "occurence" : 1
+  },
+  {"id" : 28 ,"descriptif" : "Votre poly-gang vous propose d'aller manger au macdo ce midi.",
+    "choix1" : {"text" : "Let's go!", "stats" : [-5,0,5,0]},
+    "choix2" : {"text" : "Non désolé", "stats" : [0,0,-5,0]},
+    "occurence" : 2
   }
 ]}
