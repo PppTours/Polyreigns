@@ -7,10 +7,6 @@ public class Controlleur {
 
     Monde monde;
 
-    public Controlleur(){
-        monde = new Monde();
-    }
-
     /**
      * Constructeur de Controlleur, instancie le monde du jeu
      */
