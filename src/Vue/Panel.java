@@ -16,8 +16,8 @@ public class Panel extends JPanel {
     JLabel fondCarte;
     JTextArea descriptifTextArea;
     JLabel scoreTextfield;
-    JLabel choix1;
-    JLabel choix2;
+    PanelChoix choix1;
+    PanelChoix choix2;
 
     Controlleur controlleur;
 
@@ -32,16 +32,10 @@ public class Panel extends JPanel {
 
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
-        choix1 = new JLabel();
-        choix1.setSize(200,100);
-        choix1.setBorder(BorderFactory.createLineBorder(Color.black));
-        choix1.setIcon(new ImageIcon("game/image/flechegauche.png"));
+        choix1 = new PanelChoix("flechegauche.png");
         add(choix1);
 
-        choix2 = new JLabel();
-        choix2.setSize(200,100);
-        choix2.setBorder(BorderFactory.createLineBorder(Color.black));
-        choix2.setIcon(new ImageIcon("game/image/flechedroite.png"));
+        choix2 = new PanelChoix("flechedroite.png");
         add(choix2);
 
         scoreTextfield = new JLabel("Score : 0");
@@ -60,7 +54,7 @@ public class Panel extends JPanel {
         add(fondCarte);
 
         descriptifTextArea = new JTextArea("Descriptif de la carte");
-        descriptifTextArea.setSize(400,80);
+        descriptifTextArea.setSize(450,100);
         descriptifTextArea.setEditable(false);
         descriptifTextArea.setLineWrap(true);
         descriptifTextArea.setWrapStyleWord(true);
@@ -129,19 +123,19 @@ public class Panel extends JPanel {
         fondCarte.setLocation((getWidth()-fondCarte.getWidth())/2,(getHeight()-fondCarte.getHeight())/2);
         descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,fondCarte.getY()+fondCarte.getHeight()+10);
 
-        choix1.setLocation((fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+(fondCarte.getHeight()-choix1.getHeight())/2);
-        choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
+        choix1.setLocation((fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix1.getHeight())/2);
+        choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+50+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
     }
 
     public void init(){
         controlleur.selectionnerChoix(1);
-        choix1.setText(controlleur.getTexteChoix());
+        choix1.changerTexte(controlleur.getTexteChoix());
         choix1.setVisible(true);
 
         controlleur.selectionnerChoix(2);
-        choix2.setText(controlleur.getTexteChoix());
+        choix2.changerTexte(controlleur.getTexteChoix());
         choix2.setVisible(true);
 
         controlleur.selectionnerChoix(0);
@@ -163,12 +157,6 @@ public class Panel extends JPanel {
         choix1.setVisible(false);
         choix2.setVisible(true);
         panelStat.repaint();
-
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(fond, 0, 0, null);
-    }
 }
