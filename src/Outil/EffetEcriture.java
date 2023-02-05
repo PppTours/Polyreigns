@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class EffetEcriture extends Thread{
 
-    private int lettreParSeconde = 50;
+    private int lettreParSeconde = 60;
 
     String texteAEcrire;
     JTextArea textArea;

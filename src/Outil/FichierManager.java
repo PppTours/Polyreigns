@@ -114,7 +114,7 @@ public class FichierManager {
                 }
                 String reponsechoix = (String) choix.get("text");
 
-                Choix choixDroite = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],1);
+                Choix choixDroite = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],5);
                 choixDroite.setActiveExtension(declencheurchoix);
 
 

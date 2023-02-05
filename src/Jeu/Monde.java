@@ -38,15 +38,15 @@ public class Monde {
      * Enleve la premiere carte de la pioche. Verifie si cela cause l'ajout d'une extension.
      * Met a jour les stats du joueur et verifie si le jeu est fini
      */
-    public void piocherCarte(){
+    public boolean piocherCarte(){
 
         if(choixSelectionne==null)
-            return;
+            return false;
 
         Carte carte = pioche.piocherCarte();
 
         if(carte.getExtension() == null)
-            return;
+            return true;
 
         carte.getExtension().setPoints(carte.getExtension().getPoints() + choixSelectionne.getEffetPoint());
 
@@ -65,6 +65,8 @@ public class Monde {
         verifierJeuFini();
 
         choixSelectionne = null;
+
+        return true;
 
     }
 

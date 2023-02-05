@@ -36,8 +36,8 @@ public class Controlleur {
     /**
      * Fait piocher une carte
      */
-    public void piocherCarte(){
-        monde.piocherCarte();
+    public boolean piocherCarte(){
+        return monde.piocherCarte();
     }
 
     /**

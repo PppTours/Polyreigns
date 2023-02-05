@@ -1,6 +1,7 @@
 package Vue;
 
 import Controlleur.Controlleur;
+import Outil.EffetEcriture;
 import Outil.FichierManager;
 
 import javax.swing.*;
@@ -29,7 +30,7 @@ public class Panel extends JPanel {
         setBackground(Color.GRAY);
         setLayout(null);
 
-        //fond = FichierManager.chargerImage();
+        Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
         choix1 = new JLabel();
         choix1.setSize(200,100);
@@ -43,9 +44,9 @@ public class Panel extends JPanel {
         choix2.setIcon(new ImageIcon("game/image/flechedroite.png"));
         add(choix2);
 
-        scoreTextfield = new JLabel("Score : 0000");
-        scoreTextfield.setSize(100,50);
-        scoreTextfield.setBorder(BorderFactory.createLineBorder(Color.black));
+        scoreTextfield = new JLabel("Score : 0");
+        scoreTextfield.setSize(120,50);
+        scoreTextfield.setFont(f);
         add(scoreTextfield);
 
         cardPicture = new JLabel();
@@ -59,10 +60,15 @@ public class Panel extends JPanel {
         add(fondCarte);
 
         descriptifTextArea = new JTextArea("Descriptif de la carte");
-        descriptifTextArea.setSize(300,100);
-        descriptifTextArea.setBorder(BorderFactory.createLineBorder(Color.black));
+        descriptifTextArea.setSize(400,80);
         descriptifTextArea.setEditable(false);
         descriptifTextArea.setLineWrap(true);
+        descriptifTextArea.setWrapStyleWord(true);
+        descriptifTextArea.setForeground(Color.black);
+        descriptifTextArea.setBackground(Color.gray);
+
+        descriptifTextArea.setFont(f);
+
         add(descriptifTextArea);
 
         panelStat = new PanelStat(controlleur);
@@ -77,9 +83,12 @@ public class Panel extends JPanel {
             public void keyTyped(KeyEvent e) {
 
                 if (e.getKeyChar() == KeyEvent.VK_ENTER){
-                    controlleur.piocherCarte();
-                    panelStat.repaint();
-                    maj();
+                    if(controlleur.piocherCarte()){
+                        panelStat.repaint();
+                        maj();
+                        scoreTextfield.setText("Score : "+controlleur.getScore());
+                        new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+                    }
                 }
 
             }
@@ -109,6 +118,8 @@ public class Panel extends JPanel {
             }
         });
 
+        new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte()).start();
+
         init();
 
     }
@@ -116,10 +127,10 @@ public class Panel extends JPanel {
         scoreTextfield.setLocation((getWidth()-scoreTextfield.getWidth()),getHeight()-scoreTextfield.getHeight());
         cardPicture.setLocation((getWidth()-cardPicture.getWidth())/2,(getHeight()-cardPicture.getHeight())/2);
         fondCarte.setLocation((getWidth()-fondCarte.getWidth())/2,(getHeight()-fondCarte.getHeight())/2);
-        descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,fondCarte.getY()+fondCarte.getHeight());
-        descriptifTextArea.setText(controlleur.getDescriptionCarte());
-        choix1.setLocation((int) (fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+(fondCarte.getHeight()-choix1.getHeight())/2);
-        choix2.setLocation((int) (fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
+        descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,fondCarte.getY()+fondCarte.getHeight()+10);
+
+        choix1.setLocation((fondCarte.getX()-choix1.getWidth() - 10), fondCarte.getY()+(fondCarte.getHeight()-choix1.getHeight())/2);
+        choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
     }
@@ -128,10 +139,11 @@ public class Panel extends JPanel {
         controlleur.selectionnerChoix(1);
         choix1.setText(controlleur.getTexteChoix());
         choix1.setVisible(true);
-        choix2.setLocation((int) (fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
+
         controlleur.selectionnerChoix(2);
         choix2.setText(controlleur.getTexteChoix());
         choix2.setVisible(true);
+
         controlleur.selectionnerChoix(0);
 
     }
