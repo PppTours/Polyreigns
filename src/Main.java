@@ -1,4 +1,3 @@
-import Controlleur.Controlleur;
 import Outil.FichierManager;
 import Vue.Fenetre;
 

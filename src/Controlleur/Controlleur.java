@@ -26,7 +26,7 @@ public class Controlleur {
 
         if(carte == null) {
 
-            //erreur
+            return "";
 
         }
 

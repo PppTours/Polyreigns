@@ -25,6 +25,8 @@ public class Panel extends JPanel {
 
     EffetEcriture effetEcriture;
 
+    boolean jeuTermine = false;
+
     public Panel(){
 
         controlleur = new Controlleur();
@@ -85,6 +87,8 @@ public class Panel extends JPanel {
                         effetEcriture.stopEffet();
                         effetEcriture = new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte());
                         effetEcriture.start();
+                        jeuTermine = controlleur.verifierJeuFini();
+
                         majTexte();
                     }
                 }
@@ -94,14 +98,16 @@ public class Panel extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                if (e.getKeyChar() == 'q') {
-                    controlleur.selectionnerChoix(1);
-                    previewChoix1();
-                    panelStat.repaint();
-                } else if (e.getKeyChar() == 'd') {
-                    controlleur.selectionnerChoix(2);
-                    previewChoix2();
-                    panelStat.repaint();
+                if(jeuTermine==false){
+                    if (e.getKeyChar() == 'q') {
+                        controlleur.selectionnerChoix(1);
+                        previewChoix1();
+                        panelStat.repaint();
+                    } else if (e.getKeyChar() == 'd') {
+                        controlleur.selectionnerChoix(2);
+                        previewChoix2();
+                        panelStat.repaint();
+                    }
                 }
 
                 repaint();
@@ -110,12 +116,16 @@ public class Panel extends JPanel {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
-                    maj();
-                    panelStat.repaint();
-                    controlleur.selectionnerChoix(0);
-                    choix1.setVisible(true);
-                    choix2.setVisible(true);
+
+                if(jeuTermine==false) {
+
+                    if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
+                        maj();
+                        panelStat.repaint();
+                        controlleur.selectionnerChoix(0);
+                        choix1.setVisible(true);
+                        choix2.setVisible(true);
+                    }
                 }
             }
         });
@@ -139,8 +149,14 @@ public class Panel extends JPanel {
     }
 
     public void majTexte(){
-        choix1.changerTexte(controlleur.getTexteChoixGauche());
-        choix2.changerTexte(controlleur.getTexteChoixDroite());
+
+        if(jeuTermine==false){
+            choix1.changerTexte(controlleur.getTexteChoixGauche());
+            choix2.changerTexte(controlleur.getTexteChoixDroite());
+        }else{
+            choix1.setVisible(false);
+            choix2.setVisible(false);
+        }
 
     }
 

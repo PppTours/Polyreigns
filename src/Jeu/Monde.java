@@ -40,13 +40,15 @@ public class Monde {
      */
     public boolean piocherCarte(){
 
-        if(choixSelectionne==null)
+        if(choixSelectionne==null || jeuFini)
             return false;
 
         Carte carte = pioche.piocherCarte();
 
-        if(carte.getExtension() == null)
-            return true;
+        if(carte == null){
+            jeuFini = true;
+            return false;
+        }
 
         carte.getExtension().setPoints(carte.getExtension().getPoints() + choixSelectionne.getEffetPoint());
 
@@ -109,10 +111,9 @@ public class Monde {
 
         //Verifier si le jeu est fini
         if(pioche.premiereCarte()==null){
-            jeuFini = false;
+            jeuFini = true;
             return;
         }
-
 
         if(joueur.getArgent()<=0){
             Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
