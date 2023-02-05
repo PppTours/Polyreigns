@@ -42,7 +42,7 @@
   {"id" : 9, "descriptif" : "Miracle ! Vous finissez plus tôt aujourd'hui, Vous décidez d'en profiter pour...",
     "choix1" :{"text" : "Réviser", "stats" : [0,0,0,10]},
     "choix2" : {"text" : "Dormir", "stats" : [0,10,0,0]},
-    "occurence" : 3
+    "occurence" : 2
   },
   {"id" : 10, "descriptif" : "Vos partenaires de projet ne travaillent presque pas, le projet va prendre du retard...",
     "choix1" : {"text" : "Travailler d'avantage", "stats" : [0,-5,0,5]},
@@ -74,9 +74,9 @@
     "choix2" : {"text" : "CHEH", "stats" : [0,0,-10,0]},
     "occurence" : 1
   },
-  {"id" : 16 ,"descriptif" : "Vous devez vous réveiller à 8h pour un CM que vous n'aimez pas...",
+  {"id" : 16 ,"descriptif" : "Demain il y a un CM à 8h15 d'une matiere que vous n'aimez pas...",
     "choix1" : {"text" : "Y aller quand même", "stats" : [0,-5,5,0]},
-    "choix2" : {"text" : " 'Oublier' de mettre son réveil", "stats" : [0,5,0,-10]},
+    "choix2" : {"text" : " 'Oublier' de mettre son réveil", "stats" : [0,5,0,-5]},
     "occurence" : 3
   },
   {"id" : 17 ,"descriptif" : "Mamie vous offre de l'argent pour votre anniversaire.",
@@ -138,5 +138,35 @@
     "choix1" : {"text" : "Let's go!", "stats" : [-5,0,5,0]},
     "choix2" : {"text" : "Non désolé", "stats" : [0,0,-5,0]},
     "occurence" : 2
+  },
+  {"id" : 29 ,"descriptif" : "Votre matelas commence a vieillir et vous empeche de bien dormir... Vous en achetez un nouveau ?",
+    "choix1" : {"text" : "Oui", "stats" : [-15,0,0,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,-15,0,0]},
+    "occurence" : 1
+  },
+  {"id" : 30 ,"descriptif" : "Vous pensiez avoir reussi un examen. En fait non...",
+    "choix1" : {"text" : "Oupsi", "stats" : [0,0,0,-10]},
+    "choix2" : {"text" : "Mince...", "stats" : [0,0,0,-10]},
+    "occurence" : 1
+  },
+  {"id" : 31 ,"descriptif" : "Pour tenter de sortir de votre médiocrité affligeante, vous décidez ...",
+    "choix1" : {"text" : "D'aller a la salle", "stats" : [-5,-5,10,0]},
+    "choix2" : {"text" : "D'avoir de meilleur note", "stats" : [0,-5,0,5]},
+    "occurence" : 2
+  },
+  {"id" : 32 ,"descriptif" : "Vous avez beaucoup de mal dans une matière, prendre des cours particuliers ?",
+    "choix1" : {"text" : "Oui", "stats" : [-10,0,10,10]},
+    "choix2" : {"text" : "Non", "stats" : [0,0,0,-10]},
+    "occurence" : 2
+  },
+  {"id" : 33 ,"descriptif" : "Votre ordinateur a un gros probleme. Le mettre a zero et perdre tous votre travail, ou l'emmener chez le reparateur ?",
+    "choix1" : {"text" : "Remise a zero", "stats" : [0,0,0,-15]},
+    "choix2" : {"text" : "Reparateur", "stats" : [-15,0,0,0]},
+    "occurence" : 1
+  },
+  {"id" : 34 ,"descriptif" : "PO-POPO-LYTECH",
+    "choix1" : {"text" : "PO-PO-PO-POLY-TECH-EU", "stats" : [0,0,5,0]},
+    "choix2" : {"text" : "Hein ?", "stats" : [0,0,0,0]},
+    "occurence" : 1
   }
 ]}
