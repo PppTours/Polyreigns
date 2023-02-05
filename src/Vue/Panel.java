@@ -12,6 +12,7 @@ import java.awt.event.KeyListener;
 public class Panel extends JPanel {
 
     PanelStat panelStat;
+    PanelScore panelScore;
     JLabel cardPicture;
     JLabel fondCarte;
     JTextArea descriptifTextArea;
@@ -32,10 +33,17 @@ public class Panel extends JPanel {
 
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
+        panelScore = new PanelScore();
+        panelScore.setSize(500,300);
+        panelScore.setBackground(Color.blue);
+        panelScore.setLayout(null);
+        add(panelScore);
+
         choix1 = new JLabel();
         choix1.setSize(200,100);
         choix1.setBorder(BorderFactory.createLineBorder(Color.black));
         choix1.setIcon(new ImageIcon("game/image/flechegauche.png"));
+
         add(choix1);
 
         choix2 = new JLabel();
@@ -66,14 +74,11 @@ public class Panel extends JPanel {
         descriptifTextArea.setWrapStyleWord(true);
         descriptifTextArea.setForeground(Color.black);
         descriptifTextArea.setBackground(Color.gray);
-
         descriptifTextArea.setFont(f);
-
         add(descriptifTextArea);
 
         panelStat = new PanelStat(controlleur);
         add(panelStat);
-
 
         //Gestion des inputs
         setFocusable(true);
@@ -83,6 +88,16 @@ public class Panel extends JPanel {
             public void keyTyped(KeyEvent e) {
 
                 if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                    scoreTextfield.setText("Score : "+controlleur.getScore());
+                    if (controlleur.verifierJeuFini()){
+
+                    }
+                    else {
+                        controlleur.piocherCarte();
+                        maj();}
+                    controlleur.piocherCarte();
+                    panelStat.repaint();
+                    maj();
                     if(controlleur.piocherCarte()){
                         panelStat.repaint();
                         maj();
@@ -133,6 +148,7 @@ public class Panel extends JPanel {
         choix2.setLocation((fondCarte.getX()+fondCarte.getWidth() + 10), fondCarte.getY()+(fondCarte.getHeight()-choix2.getHeight())/2);
 
         panelStat.setLocation((getWidth()-panelStat.getWidth())/2,0);
+        panelScore.setLocation((getWidth()-panelScore.getWidth())/2,(getHeight()-panelScore.getHeight())/2);
     }
 
     public void init(){
@@ -143,7 +159,6 @@ public class Panel extends JPanel {
         controlleur.selectionnerChoix(2);
         choix2.setText(controlleur.getTexteChoix());
         choix2.setVisible(true);
-
         controlleur.selectionnerChoix(0);
 
     }
