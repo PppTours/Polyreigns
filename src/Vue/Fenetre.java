@@ -10,8 +10,8 @@ public class Fenetre extends JFrame {
     Panel panel;
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    int width = screenSize.width-100;
-    int height = screenSize.height-100;
+    int width = screenSize.width;
+    int height = screenSize.height;
     FlowLayout flowLayout;
 
     public Fenetre(){
