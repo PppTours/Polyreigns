@@ -26,7 +26,7 @@ public class Fenetre extends JFrame {
         panel.setSize(height, height);
         add(panel);
 
-        getContentPane().setBackground(Color.green);
+        getContentPane().setBackground(Color.BLACK);
         setUndecorated(true);
         setVisible(true);
         device.setFullScreenWindow(this);
