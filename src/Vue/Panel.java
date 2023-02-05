@@ -30,6 +30,7 @@ public class Panel extends JPanel {
 
     Fenetre parent;
 
+    boolean enterPresse = false;
 
     public Panel(Fenetre pParent){
 
@@ -91,8 +92,11 @@ public class Panel extends JPanel {
             public void keyTyped(KeyEvent e) {
 
                 if(jeuTermine==false){
-                    if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER && enterPresse == false){
                         if(controlleur.piocherCarte()) {
+
+                            enterPresse = true;
+
                             panelStat.repaint();
                             scoreTextfield.setText("Score : " + controlleur.getScore());
                             effetEcriture.stopEffet();
@@ -168,6 +172,8 @@ public class Panel extends JPanel {
                         choix1.setVisible(true);
                         choix2.setVisible(true);
                     }
+                    if (e.getKeyChar() == KeyEvent.VK_ENTER)
+                        enterPresse = false;
                 }
             }
         });
