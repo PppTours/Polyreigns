@@ -42,7 +42,7 @@ public class Fenetre extends JFrame {
             }
             @Override
             public void componentMoved(ComponentEvent e) {
-                System.out.println("Moved to " + e.getComponent().getLocation());
+                //System.out.println("Moved to " + e.getComponent().getLocation());
             }
         });
         panel.setLocation((getWidth()-panel.getWidth())/2,0);

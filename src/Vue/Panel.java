@@ -45,11 +45,13 @@ public class Panel extends JPanel {
         choix1 = new JLabel("Choix 1");
         choix1.setSize(200,100);
         choix1.setBorder(BorderFactory.createLineBorder(Color.black));
+        choix1.setVisible(false);
         add(choix1);
 
         choix2 = new JLabel("Choix 2");
         choix2.setSize(200,100);
         choix2.setBorder(BorderFactory.createLineBorder(Color.black));
+        choix2.setVisible(false);
         add(choix2);
 
         panelStat = new PanelStat(controlleur);
@@ -62,13 +64,22 @@ public class Panel extends JPanel {
         addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 
+                int choix = 0;
+
+                if (e.getKeyChar() == 'd') {
+                    previewChoix1();
+                    choix = 1;
+                } else if (e.getKeyChar() == 'q') {
+                    previewChoix2();
+                    choix = 2;
+                } else if (e.getKeyChar() == KeyEvent.VK_ENTER){
+                    controlleur.selectionnerChoix(choix);
+                    maj();
+                    choix1.setVisible(false);
+                    choix2.setVisible(false);
                 }
 
-                /*if(e.getKeyChar()=='q'){
-
-                }*/
             }
 
             @Override
@@ -85,7 +96,6 @@ public class Panel extends JPanel {
     }
     public void maj(){
         scoreTextfield.setLocation((getWidth()-scoreTextfield.getWidth()),getHeight()-scoreTextfield.getHeight());
-        System.out.println(scoreTextfield.getLocation());
         cardPicture.setLocation((getWidth()-cardPicture.getWidth())/2,(getHeight()-cardPicture.getHeight())/2);
         descriptifTextArea.setLocation((getWidth()-descriptifTextArea.getWidth())/2,cardPicture.getY()+cardPicture.getHeight());
         choix1.setLocation(cardPicture.getX()-choix1.getWidth(), cardPicture.getY()+(cardPicture.getHeight()-choix1.getHeight())/2);
@@ -94,12 +104,18 @@ public class Panel extends JPanel {
 
     }
 
-    public void choix1(){
+    public void previewChoix1(){
+        maj();
         cardPicture.setLocation(cardPicture.getX() + 40, cardPicture.getY());
         choix1.setLocation(choix1.getX() + 20, choix1.getY());
+        choix1.setVisible(true);
+        choix2.setVisible(false);
     }
-    public void choix2(){
+    public void previewChoix2(){
+        maj();
         cardPicture.setLocation(cardPicture.getX() - 40, cardPicture.getY());
         choix2.setLocation(choix2.getX() - 20, choix2.getY());
+        choix1.setVisible(false);
+        choix2.setVisible(true);
     }
 }
