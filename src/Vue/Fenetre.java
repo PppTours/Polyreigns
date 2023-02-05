@@ -23,7 +23,7 @@ public class Fenetre extends JFrame {
         GraphicsDevice device = graphics.getDefaultScreenDevice();
         setSize(width, height);
 
-        panel = new Panel(this);
+        panel = new Panel();
         panel.setSize(height, height);
         add(panel);
 
@@ -49,32 +49,13 @@ public class Fenetre extends JFrame {
         panel.setLocation((getWidth()-panel.getWidth())/2,0);
         panel.maj();
     }
-
+/*
     public void init(){
-
         getContentPane().removeAll();
-        repaint();
-
         panel = new Panel(this);
         panel.setSize(height, height);
+
         add(panel);
-
-        panel.addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                width = e.getComponent().getWidth();
-                height = e.getComponent().getHeight();
-                panel.setLocation((getWidth()-panel.getWidth())/2,0);
-
-                // panel.maj();
-            }
-            @Override
-            public void componentMoved(ComponentEvent e) {
-                //System.out.println("Moved to " + e.getComponent().getLocation());
-            }
-        });
-        panel.setLocation((getWidth()-panel.getWidth())/2,0);
-        panel.maj();
     }
-
+*/
 }

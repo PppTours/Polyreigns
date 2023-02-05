@@ -28,13 +28,10 @@ public class Panel extends JPanel {
 
     boolean jeuTermine = false;
 
-    Fenetre parent;
-
     boolean enterPresse = false;
 
-    public Panel(Fenetre pParent){
+    public Panel( ){
 
-        parent = pParent;
 
         controlleur = new Controlleur();
 
@@ -44,7 +41,6 @@ public class Panel extends JPanel {
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
         panelScore = new PanelScore();
-        //panelScore.setVisible(false);
         add(panelScore);
 
         choix1 = new PanelChoix("flechegauche.png");
@@ -116,13 +112,12 @@ public class Panel extends JPanel {
 
                         int selection = panelScore.getSelection();
 
-                        if(selection == 5){
+                        if(selection == 4){
                             System.exit(0);
                         }
-                        if(selection == 4){
+                        /*if(selection == 4){
                             setVisible(false);
-                            parent.init();
-                        }
+                        }*/
                     }
                 }
 
