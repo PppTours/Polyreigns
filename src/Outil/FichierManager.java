@@ -105,7 +105,7 @@ public class FichierManager {
 
             String nomExtension = nomFichier.substring(0,nomFichier.indexOf('.'));
 
-            int intervalle = 30;
+            int intervalle = 40;
             if(nomExtension.equals(nomDeckPrincipal))
                 intervalle = -1;
 
@@ -162,6 +162,12 @@ public class FichierManager {
 
                 int occurence = ((Long)object.get("occurence")).intValue();
                 String description = (String) object.get("descriptif");
+
+                Choix permutation = choixDroite;
+                if(Math.random()>0.5){
+                    choixDroite = choixGauche;
+                    choixGauche = permutation;
+                }
 
                 Carte c = new Carte(extension,description,choixGauche,choixDroite,occurence);
 

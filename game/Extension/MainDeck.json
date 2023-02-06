@@ -28,7 +28,7 @@
   },
   {"id" : 6, "descriptif" : "Le parking est encore en travaux...",
     "choix1" : {"text" : "Prendre le bus", "stats" : [-5,0,0,0]},
-    "choix2" : {"text" : "Prendre la vélo", "stats" : [0,-5,0,0]},
+    "choix2" : {"text" : "Prendre le vélo", "stats" : [0,-5,0,0]},
     "occurence" : 4
   },
   {"id" : 7, "descriptif" : "Vous allez manger au RU, mais il y a environ 542 personnes qui font la queue...",
@@ -121,7 +121,7 @@
     "choix2" : {"text" : "Rester", "stats" : [0,-5,5,0]},
     "occurence" : 3
   },
-  {"id" : 25 ,"descriptif" : "Ce TP est ennuyant... Vous pourriez travailler, ou aussi trouver les réponses sur Internet...",
+  {"id" : 25 ,"descriptif" : "Ce TP est ennuyant... Vous pourriez travailler, ou aussi trouver des réponses éclatées sur Internet",
     "choix1" : {"text" : "Travailler serieusement", "stats" : [0,-5,0,5]},
     "choix2" : {"text" : "Google est mon ami", "stats" : [0,5,0,-5]},
     "occurence" : 2
@@ -209,6 +209,41 @@
     {"id" : 42 ,"descriptif" : "S'embêter a trouver un bon stage, ou aller au labo de Polytech ?",
       "choix1" : {"text" : "Chercher un bon stage", "stats" : [10,-5,5,0]},
       "choix2" : {"text" : "Labo par facilité", "stats" : [0,5,0,0]},
+      "occurence" : 1
+    },
+    {"id" : 43 ,"descriptif" : "L'examen que vous êtes en train de passer va être un massacre, glisser un billet pour limiter la casse?",
+      "choix1" : {"text" : "Glisser un billet", "stats" : [-10,0,0,-5]},
+      "choix2" : {"text" : "Non j'accepte mon destin", "stats" : [0,0,0,-15]},
+      "occurence" : 2
+    },
+    {"id" : 44 ,"descriptif" : "Votre poly-gang vous propose d'aller au cinéma.",
+      "choix1" : {"text" : "J'y vais", "stats" : [-5,0,5,0]},
+      "choix2" : {"text" : "Je refuse", "stats" : [0,0,-5,0]},
+      "occurence" : 2
+    },
+    {"id" : 45 ,"descriptif" : "Il y a un chantier devant chez vous, vous risquez de mal dormir...",
+      "choix1" : {"text" : "Acheter des boule quies", "stats" : [-5,0,0,0]},
+      "choix2" : {"text" : "Super...", "stats" : [0,-10,0,0]},
+      "occurence" : 2
+    },
+    {"id" : 46 ,"descriptif" : "Le prix de l'eau chaud a augmenté, continuer a prendre des douches?",
+      "choix1" : {"text" : "L'hygiène c'est important", "stats" : [-5,0,0,0]},
+      "choix2" : {"text" : "Je vais mettre du deo pour masquer", "stats" : [0,0,-5,0]},
+      "occurence" : 2
+    },
+    {"id" : 47 ,"descriptif" : "Aller en cours en vélo vous ferait économiser de l'argent",
+      "choix1" : {"text" : "La voiture c'est confortable", "stats" : [-5,5,0,0]},
+      "choix2" : {"text" : "Le vélo c'est écolo", "stats" : [10,-5,0,0]},
+      "occurence" : 1
+    },
+    {"id" : 48 ,"descriptif" : "Vous avez choppé un gros virus informatique...",
+      "choix1" : {"text" : "Passer la nuit à le réparer", "stats" : [0,-10,0,0]},
+      "choix2" : {"text" : "Payer un antivirus", "stats" : [-10,0,0,0]},
+      "occurence" : 1
+    },
+    {"id" : 49 ,"descriptif" : "Vous avez oublié de faire le devoir d'anglais pour demain. Il est 23h.",
+      "choix1" : {"text" : "No problem. I spike anglish verry good", "stats" : [0,-5,0,-5]},
+      "choix2" : {"text" : "Abandonner et aller dormir", "stats" : [0,0,0,-10]},
       "occurence" : 1
     }
 ]}

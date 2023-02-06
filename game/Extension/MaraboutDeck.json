@@ -16,9 +16,19 @@
     "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
     "occurence" : 2
   },
-  {"id" : 3 , "descriptif" : "Votre marabout a un gros deal pour vous: un rituel avec votre sang, il vous donnera gloire, pouvoir et intelligence",
+    {"id" : 3 , "descriptif" : "Votre marabout vous propose de faire tomber votre prof malade pour que vous puissiez faire une grasse mat.",
+      "choix1" : {"text" : "Accepter", "stats" : [-5,5,0,0]},
+      "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
+      "occurence" : 2
+    },
+  {"id" : 4 , "descriptif" : "Votre marabout a un gros deal pour vous: un rituel avec votre sang, il vous donnera gloire, pouvoir et intelligence",
     "choix1" : {"text" : "Accepter", "stats" : [10,-15,10,10]},
     "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
     "occurence" : 1
-  }
+  },
+    {"id" : 5 , "descriptif" : "Votre marabout vous propose de vous acheter un de vos reins.",
+      "choix1" : {"text" : "Tfacon j'en ai un autre", "stats" : [15,-15,0,0]},
+      "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
+      "occurence" : 1
+    }
 ]}

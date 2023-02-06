@@ -25,9 +25,10 @@ public class MP3 {
 
     // play the MP3 file to the sound card
     public void play() {
+        BufferedInputStream bis = null;
         try {
             FileInputStream fis = new FileInputStream(filename);
-            BufferedInputStream bis = new BufferedInputStream(fis);
+            bis = new BufferedInputStream(fis);
             player = new Player(bis);
         } catch (Exception e) {
             System.out.println("Problem playing file " + filename);
@@ -41,6 +42,7 @@ public class MP3 {
                     player.play();
                 }while(loop);
             } catch (Exception e) {
+                System.out.println(e);
             }
         }).start();
 

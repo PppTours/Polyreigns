@@ -84,10 +84,9 @@ public class Pioche {
 
             Carte c = pioche.get(i);
 
-            //Si la carte represente une extension non integree, c'est que c'est une carte declencheuse
-            if(c.getExtension().isDejaIntegreePioche()==false && c.getExtension()!=pExtension){
+            if(c.getChoixDroite().isActiveExtension() || c.getChoixGauche().isActiveExtension()){
                 carteDeclencheuse.add(pioche.remove(i));
-                i--;
+                i--;    // car le i actuel represente maintenant la carte suivante
             }
         }
 

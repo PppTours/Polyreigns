@@ -35,5 +35,10 @@
     "choix1" : {"text" : "S'en occuper personnellement", "stats" : [0,-5,0,0]},
     "choix2" : {"text" : "Ne rien faire", "stats" : [-10,0,0,0]},
     "occurence" : 1
-  }
+  },
+    {"id" : 7 , "descriptif" : "Vous êtes tenté de prendre du temps de révisions pour apprendre le Latte Art",
+      "choix1" : {"text" : "Ca va bien se vendre", "stats" : [10,0,5,-5]},
+      "choix2" : {"text" : "Non je révise", "stats" : [0,0,0,5]},
+      "occurence" : 1
+    }
 ]}
