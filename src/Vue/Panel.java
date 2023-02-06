@@ -112,12 +112,30 @@ public class Panel extends JPanel {
 
                         int selection = panelScore.getSelection();
 
-                        if(selection == 4){
+                        if(selection == 5){
                             System.exit(0);
                         }
-                        /*if(selection == 4){
-                            setVisible(false);
-                        }*/
+                        if(selection == 4){
+
+                            remove(panelScore);
+                            panelScore = new PanelScore();
+                            add(panelScore,0);
+
+                            jeuTermine = false;
+                            controlleur = new Controlleur();
+
+                            effetEcriture = new EffetEcriture(descriptifTextArea,controlleur.getDescriptionCarte());
+                            effetEcriture.start();
+
+                            panelStat.setControlleur(controlleur);
+                            panelStat.repaint();
+
+                            maj();
+                            majTexte();
+
+                            choix1.setVisible(true);
+                            choix2.setVisible(true);
+                        }
                     }
                 }
 

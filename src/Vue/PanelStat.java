@@ -32,11 +32,14 @@ public class PanelStat extends JPanel {
             slotImageStats.add(FichierManager.chargerImage("fondStat.png"));
         }
 
-
         setBackground(new Color(0,0,0,0));
 
         setSize(500,150);
 
+    }
+
+    public void setControlleur(Controlleur pControlleur){
+        controlleur = pControlleur;
     }
 
     @Override

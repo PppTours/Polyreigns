@@ -82,8 +82,6 @@ public class PanelScore extends JPanel {
         recommencer.setForeground(Color.white);
         recommencer.setLocation(getWidth()/2-recommencer.getWidth()/2,secondLetter.getY()+100);
 
-        recommencer.setVisible(false);
-
         quitter.setSize(150,30);
         quitter.setForeground(Color.white);
         quitter.setLocation(getWidth()/2-quitter.getWidth()/2,secondLetter.getY()+150);
@@ -105,8 +103,8 @@ public class PanelScore extends JPanel {
             case 1 -> firstLetter.selectionner();
             case 2 -> secondLetter.selectionner();
             case 3 -> thirdLetter.selectionner();
-           // case 4 -> recommencer.setForeground(Color.green);
-            case 4 -> quitter.setForeground(Color.green);
+            case 4 -> recommencer.setForeground(Color.green);
+            case 5 -> quitter.setForeground(Color.green);
         }
     }
 
@@ -132,8 +130,8 @@ public class PanelScore extends JPanel {
 
     public void incremeterIndiceSelection(){
         indiceSelection++;
-        if(indiceSelection>4)
-            indiceSelection = 4;
+        if(indiceSelection>5)
+            indiceSelection = 5;
         majSelection();
     }
 
