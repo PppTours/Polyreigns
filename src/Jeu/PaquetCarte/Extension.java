@@ -88,6 +88,14 @@ public class Extension {
         return score;
     }
 
+    /**
+     * Reset le score de toute les extensions
+     */
+    public static void resetScore() {
+        for(Extension e : extensionListe)
+            e.points = 0;
+    }
+
     public int getIntervallePresence() {
         return intervallePresence;
     }

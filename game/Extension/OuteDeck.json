@@ -1,4 +1,6 @@
-{"cartes" : [
+{
+  "points": 10,
+  "cartes" : [
   {"id" : 0 ,"descriptif" : "Vous trouvez une otarie à la K'fet ???",
     "choix1" : {"text" : "La chasser", "stats" : [-5,-5,-5,-5], "declencheur": 0},
     "choix2" : {"text" : "Lui faire un câlin", "stats" : [0,0,5,0], "declencheur": 1},
@@ -25,7 +27,7 @@
     "occurence" : 1
   },
   {"id" : 5 , "descriptif" : "L'otarie est menacée de quitter Polytech! Comment réagissez vous ?",
-    "choix1" : {"text" : "Faire une grève de la fin", "stats" : [0,-10,5,0]},
+    "choix1" : {"text" : "Faire une grève de la faim", "stats" : [0,-10,5,0]},
     "choix2" : {"text" : "Payer l'administration", "stats" : [-10,0,5,0]},
     "occurence" : 1
   }

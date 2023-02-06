@@ -4,6 +4,7 @@
     <root id="archive" name="Polytudiant.jar">
       <element id="module-output" name="Polytudiant" />
       <element id="extracted-dir" path="$PROJECT_DIR$/game/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/game/lib/jlayer-1.0.1.4.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

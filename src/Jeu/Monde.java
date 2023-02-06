@@ -25,7 +25,17 @@ public class Monde {
 
         joueur = new Joueur();
         pioche = new Pioche();
+
+        resetScore();
     }
+
+    /**
+     * Reset le score de toute les extensions
+     */
+    public void resetScore(){
+        Extension.resetScore();
+    }
+
 
     /**
      * Voir la premiere carte de la pioche

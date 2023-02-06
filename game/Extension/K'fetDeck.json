@@ -1,4 +1,6 @@
-{"cartes" :  [
+{
+  "points": 10,
+  "cartes" :  [
   {"id" : 0 ,"descriptif" : "On vous propose le poste de président à la K'fet ! Mais rien que l'idée vous épuise déjà",
       "choix1" : {"text" : "Accepter", "stats" : [0,-5,5,0], "declencheur": 1},
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0], "declencheur": 0},
@@ -15,7 +17,7 @@
     "occurence" : 2
   },
   {"id" : 3 , "descriptif" : "Lors de votre service de ce midi, vous avez oublié de vous encaisser votre repas.",
-    "choix1" : {"text" : "Personne ne le saura...", "stats" : [0,0,0,0]},
+    "choix1" : {"text" : "Personne ne le saura...", "stats" : [5,0,0,0]},
     "choix2" : {"text" : "Je vais payer !", "stats" : [-5,0,0,0]},
     "occurence" : 2
   },
@@ -27,6 +29,11 @@
   {"id" : 5 , "descriptif" : "Après un coup mal placé, le tapis du billard est cassé et est inutilisable. Achetez vous un nouveau tapis ?",
     "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
     "choix2" : {"text" : "Non", "stats" : [0,0,-10,0]},
+    "occurence" : 1
+  },
+  {"id" : 6 , "descriptif" : "Il y a une fuite d'eau à la K'Fet, si vous vous en occupez pas maintenant, il risque d'y avoir des dégâts...",
+    "choix1" : {"text" : "S'en occuper personnellement", "stats" : [0,-5,0,0]},
+    "choix2" : {"text" : "Ne rien faire", "stats" : [-10,0,0,0]},
     "occurence" : 1
   }
 ]}

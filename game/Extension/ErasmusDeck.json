@@ -1,4 +1,6 @@
-{"cartes" :  [
+{
+  "points": 10,
+  "cartes" :  [
   {"id" : 0 ,"descriptif" : "Marius, un étudiant Erasmus, vient vous marmoner un truc dans un mélange d'anglais et de roumain.",
     "choix1" : {"text" : "Euh oui oui", "stats" : [0,0,5,0], "declencheur": 1},
     "choix2" : {"text" : "S'enfuir", "stats" : [0,-5,0,0], "declencheur": 0},
@@ -26,7 +28,7 @@
   },
   {"id" : 5 , "descriptif" : "A la pause entre deux cours, Marius vient vous voir et vous offre un café!",
     "choix1" : {"text" : "Merci!", "stats" : [0,5,0,0]},
-    "choix2" : {"text" : "Multumesc", "stats" : [0,5,0,0]},
+    "choix2" : {"text" : "Multumesc", "stats" : [0,5,5,0]},
     "occurence" : 1
   }
 ]}

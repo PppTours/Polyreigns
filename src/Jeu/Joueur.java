@@ -10,7 +10,7 @@ public class Joueur {
     private int vieSociale;
     private int note;
 
-    public final static int maxStat = 50;
+    public final static int maxStat = 60;
 
     public Joueur(){
 

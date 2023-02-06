@@ -3,6 +3,7 @@ package Vue;
 import Controlleur.Controlleur;
 import Outil.EffetEcriture;
 import Outil.FichierManager;
+import Outil.MP3;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,15 +31,19 @@ public class Panel extends JPanel {
 
     boolean enterPresse = false;
 
+    MP3 mp3;
+
     public Panel( ){
 
+        mp3 = new MP3(FichierManager.getLienMusique("music.mp3"));
+        mp3.play();
 
         controlleur = new Controlleur();
 
-        setBackground(Color.GRAY);
+        setBackground(Color.GRAY.brighter());
         setLayout(null);
 
-        Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
+        fond = FichierManager.chargerImage("fondecran.png");
 
         panelScore = new PanelScore();
         add(panelScore);
@@ -49,20 +54,24 @@ public class Panel extends JPanel {
         choix2 = new PanelChoix("flechedroite.png");
         add(choix2);
 
+        Font fscore = new Font(Font.SANS_SERIF, Font.BOLD,32);
+
         scoreTextfield = new JLabel("Score : 0");
-        scoreTextfield.setSize(120,50);
-        scoreTextfield.setFont(f);
+        scoreTextfield.setSize(190,80);
+        scoreTextfield.setFont(fscore);
         add(scoreTextfield);
 
         cardPicture = new JLabel();
         cardPicture.setSize(335,335);
-        cardPicture.setIcon(new ImageIcon("game/image/carte.png"));
+        Image i = FichierManager.chargerImage("carteTest2.png");
+        cardPicture.setIcon(new ImageIcon(i));
         add(cardPicture);
 
         fondCarte = new JLabel();
         fondCarte.setSize(350,350);
-        fondCarte.setIcon(new ImageIcon("game/image/fondcarte.png"));
-        add(fondCarte);
+        i = FichierManager.chargerImage("fondcarte.png");
+        fondCarte.setIcon(new ImageIcon(i));
+        //add(fondCarte);
 
         descriptifTextArea = new JTextArea("Descriptif de la carte");
         descriptifTextArea.setSize(450,150);
@@ -70,7 +79,12 @@ public class Panel extends JPanel {
         descriptifTextArea.setLineWrap(true);
         descriptifTextArea.setWrapStyleWord(true);
         descriptifTextArea.setForeground(Color.black);
-        descriptifTextArea.setBackground(Color.gray);
+        descriptifTextArea.setBackground(Color.gray.brighter().brighter());
+        descriptifTextArea.setBorder(BorderFactory.createCompoundBorder(
+                descriptifTextArea.getBorder(),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+
+        Font f = new Font(Font.SANS_SERIF, Font.BOLD,20);
 
         descriptifTextArea.setFont(f);
 
@@ -86,6 +100,9 @@ public class Panel extends JPanel {
         addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+
+                if(e.getKeyChar() == KeyEvent.VK_ESCAPE)
+                    System.exit(0);
 
                 if(jeuTermine==false){
                     if (e.getKeyChar() == 'r' && enterPresse == false){
@@ -238,6 +255,12 @@ public class Panel extends JPanel {
         choix1.setVisible(false);
         choix2.setVisible(true);
         panelStat.repaint();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(fond, 0, 0,getWidth(),getHeight(), null);
     }
 
 }

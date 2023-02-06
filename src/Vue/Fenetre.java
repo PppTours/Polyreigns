@@ -10,10 +10,8 @@ public class Fenetre extends JFrame {
     Panel panel;
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    int width = screenSize.width-100;
-    int height = screenSize.height-100;
-    FlowLayout flowLayout;
-
+    int width = screenSize.width;
+    int height = screenSize.height;
 
     public Fenetre(){
 
@@ -30,7 +28,7 @@ public class Fenetre extends JFrame {
         getContentPane().setBackground(Color.BLACK);
         setUndecorated(true);
         setVisible(true);
-        //device.setFullScreenWindow(this);
+        device.setFullScreenWindow(this);
 
         panel.addComponentListener(new ComponentAdapter() {
             @Override
@@ -49,13 +47,5 @@ public class Fenetre extends JFrame {
         panel.setLocation((getWidth()-panel.getWidth())/2,0);
         panel.maj();
     }
-/*
-    public void init(){
-        getContentPane().removeAll();
-        panel = new Panel(this);
-        panel.setSize(height, height);
 
-        add(panel);
-    }
-*/
 }

@@ -19,9 +19,15 @@ import java.nio.charset.StandardCharsets;
  */
 public class FichierManager {
 
+    static boolean modeDev = true;
+
     public static void exporterMeilleurJoueur(){
 
-        try(FileWriter fileWriter = new FileWriter("game/scores.txt")) {
+        String chemin = "scores.txt";
+        if(modeDev)
+            chemin = "game/"+chemin;
+
+        try(FileWriter fileWriter = new FileWriter(chemin)) {
 
             for(MeilleurJoueur a : MeilleurJoueur.classement){
                 fileWriter.write(a.getNom()+";"+a.getScore()+"\r\n");
@@ -35,7 +41,11 @@ public class FichierManager {
 
     public static void importerMeilleurJoueur(){
 
-        try(FileReader fileReader = new FileReader("game/scores.txt")) {
+        String chemin = "scores.txt";
+        if(modeDev)
+            chemin = "game/"+chemin;
+
+        try(FileReader fileReader = new FileReader(chemin)) {
 
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
@@ -58,15 +68,19 @@ public class FichierManager {
 
     public static void importerTouteLesCartes(){
 
-        File f = new File("game/Extension");
+        String chemin = "Extension";
+        if(modeDev)
+            chemin = "game/"+chemin;
+
+        File f = new File(chemin);
 
         String[] chemins = f.list();
 
         if(chemins==null)
             return;
 
-        for(String chemin : chemins){
-            importerExtension(chemin);
+        for(String c : chemins){
+            importerExtension(c);
         }
 
         Extension.initialiseExtension();
@@ -75,13 +89,18 @@ public class FichierManager {
 
     private static void importerExtension(String nomFichier){
 
+        String chemin = "Extension/";
+        if(modeDev)
+            chemin = "game/"+chemin;
+
         String nomDeckPrincipal = "MainDeck";
 
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("game/Extension/"+nomFichier, StandardCharsets.UTF_8)) {
+        try (FileReader reader = new FileReader(chemin+nomFichier, StandardCharsets.UTF_8)) {
             JSONObject obj = (JSONObject) jsonParser.parse(reader);
 
+            int points = ((Long)obj.get("points")).intValue();
             JSONArray cartes = (JSONArray) obj.get("cartes");
 
             String nomExtension = nomFichier.substring(0,nomFichier.indexOf('.'));
@@ -104,7 +123,7 @@ public class FichierManager {
                 boolean declencheurchoix = false;
                 Object objectDenc = choix.get("declencheur");
                 if(objectDenc!=null){
-                    declencheurchoix = ((Long)object.get("occurence"))>0;
+                    declencheurchoix = (Long)(objectDenc)>0;
                 }
 
                 JSONArray arrayChoix = (JSONArray)choix.get("stats");
@@ -115,7 +134,7 @@ public class FichierManager {
                 }
                 String reponsechoix = (String) choix.get("text");
 
-                Choix choixDroite = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],5);
+                Choix choixDroite = new Choix(reponsechoix,statschoix[0],statschoix[1],statschoix[2],statschoix[3],points);
                 choixDroite.setActiveExtension(declencheurchoix);
 
 
@@ -126,7 +145,7 @@ public class FichierManager {
                 declencheurchoix = false;
                 objectDenc = choix.get("declencheur");
                 if(objectDenc!=null){
-                    declencheurchoix = ((Long)object.get("occurence"))>0;
+                    declencheurchoix = (Long)(objectDenc)>0;
                 }
 
                 arrayChoix = (JSONArray)choix.get("stats");
@@ -156,13 +175,25 @@ public class FichierManager {
     }
 
     public static Image chargerImage(String pNom){
+
+        String chemin = "image/";
+        if(modeDev)
+            chemin = "game/"+chemin;
+
         Image image = null;
         try {
-            image = ImageIO.read(new File("game/image/"+pNom));
+            image = ImageIO.read(new File(chemin+pNom));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return image;
+    }
+
+    public static String getLienMusique(String nomFichier){
+        String chemin = nomFichier;
+        if(modeDev)
+            chemin = "game/"+chemin;
+        return chemin;
     }
 
 }

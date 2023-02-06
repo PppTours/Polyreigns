@@ -1,4 +1,6 @@
-{"cartes": [
+{
+  "points": 5,
+  "cartes": [
   {"id" : 1, "descriptif" : "Vous arrivez en CM et votre professeur adoré vous a préparé un petit QCM...",
     "choix1" : {"text" : "Répondre au talent", "stats" : [0,0,0,-5]},
     "choix2" : {"text" : "Tricher", "stats" : [0,-5,0,5]},
@@ -188,5 +190,25 @@
     "choix1" : {"text" : "Oui", "stats" : [-5,5,0,0]},
     "choix2" : {"text" : "Non", "stats" : [0,-5,0,-5]},
     "occurence" : 2
-  }
+  },
+  {"id" : 39 ,"descriptif" : "Il y a la nuit de l'info ! Vous y participez ?",
+    "choix1" : {"text" : "Oui !", "stats" : [0,-15,15,0]},
+    "choix2" : {"text" : "Non flemme", "stats" : [0,0,-5,0]},
+    "occurence" : 1
+  },
+  {"id" : 40 ,"descriptif" : "Tu attends une note depuis longtemps... ",
+    "choix1" : {"text" : "J'attends encore", "stats" : [0,-5,0,0]},
+    "choix2" : {"text" : "Je vais me plaindre à Karine", "stats" : [0,0,-5,0]},
+    "occurence" : 2
+  },
+  {"id" : 41 ,"descriptif" : "Tu vas au WEA cette année ?",
+    "choix1" : {"text" : "Evidemment", "stats" : [-15,0,15,0]},
+    "choix2" : {"text" : "Non flemme", "stats" : [0,0,-5,0]},
+    "occurence" : 1
+  },
+    {"id" : 42 ,"descriptif" : "S'embêter a trouver un bon stage, ou aller au labo de Polytech ?",
+      "choix1" : {"text" : "Chercher un bon stage", "stats" : [10,-5,5,0]},
+      "choix2" : {"text" : "Labo par facilité", "stats" : [0,5,0,0]},
+      "occurence" : 1
+    }
 ]}

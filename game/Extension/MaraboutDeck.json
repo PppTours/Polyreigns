@@ -1,10 +1,12 @@
-{"cartes" :  [
+{
+  "points": 10,
+  "cartes" :  [
   {"id" : 0 ,"descriptif" : "Dans votre boite au lettre vous avez recu un prospectus d'un marabout vendant ses services.",
     "choix1" : {"text" : "Jeter le papier", "stats" : [0,0,0,0], "declencheur": 0},
     "choix2" : {"text" : "Prendre contact", "stats" : [-5,0,0,0], "declencheur": 1},
     "occurence" : 1
   },
-  {"id" : 1 , "descriptif" : "Vous appelez votre marabout. Il vous propose un rituel pour vous donnez de l'énergie ou du charisme",
+  {"id" : 1 , "descriptif" : "Vous appelez votre marabout. Il vous propose un rituel pour vous donner de l'énergie ou du charisme",
     "choix1" : {"text" : "Rituel d'énergie", "stats" : [-10,10,0,0]},
     "choix2" : {"text" : "Rituel de charisme", "stats" : [-10,0,10,0]},
     "occurence" : 2
