@@ -12,6 +12,7 @@ import org.json.simple.parser.ParseException;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Manipule les fichiers associes au jeu
@@ -78,7 +79,7 @@ public class FichierManager {
 
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("game/Extension/"+nomFichier)) {
+        try (FileReader reader = new FileReader("game/Extension/"+nomFichier, StandardCharsets.UTF_8)) {
             JSONObject obj = (JSONObject) jsonParser.parse(reader);
 
             JSONArray cartes = (JSONArray) obj.get("cartes");

@@ -88,7 +88,7 @@ public class Panel extends JPanel {
             public void keyTyped(KeyEvent e) {
 
                 if(jeuTermine==false){
-                    if (e.getKeyChar() == KeyEvent.VK_ENTER && enterPresse == false){
+                    if (e.getKeyChar() == 'r' && enterPresse == false){
                         if(controlleur.piocherCarte()) {
 
                             enterPresse = true;
@@ -107,7 +107,7 @@ public class Panel extends JPanel {
                         }
                     }
                 }else {
-                    if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    if (e.getKeyChar() == 'r') {
                         controlleur.donnerNomJoueur(panelScore.getNom());
 
                         int selection = panelScore.getSelection();
@@ -145,26 +145,26 @@ public class Panel extends JPanel {
             public void keyPressed(KeyEvent e) {
 
                 if(jeuTermine==false){
-                    if (e.getKeyChar() == 'q') {
+                    if (e.getKeyCode() == KeyEvent.VK_LEFT) {
                         controlleur.selectionnerChoix(1);
                         previewChoix1();
                         panelStat.repaint();
-                    } else if (e.getKeyChar() == 'd') {
+                    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                         controlleur.selectionnerChoix(2);
                         previewChoix2();
                         panelStat.repaint();
                     }
                 }else {
-                    if (e.getKeyChar() == 'd') {
+                    if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                         panelScore.incremeterIndiceSelection();
                     }
-                    if (e.getKeyChar() == 'q') {
+                    if (e.getKeyCode() == KeyEvent.VK_LEFT) {
                         panelScore.decrementerIndiceSelection();
                     }
-                    if (e.getKeyChar() == 'z') {
+                    if (e.getKeyCode() == KeyEvent.VK_UP) {
                         panelScore.incrementeLettre();
                     }
-                    if (e.getKeyChar() == 'x') {
+                    if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                         panelScore.decrementeLettre();
                     }
                 }
@@ -178,14 +178,14 @@ public class Panel extends JPanel {
 
                 if(jeuTermine==false) {
 
-                    if (e.getKeyChar() == 'q' || e.getKeyChar() == 'd') {
+                    if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_LEFT) {
                         maj();
                         panelStat.repaint();
                         controlleur.selectionnerChoix(0);
                         choix1.setVisible(true);
                         choix2.setVisible(true);
                     }
-                    if (e.getKeyChar() == KeyEvent.VK_ENTER)
+                    if (e.getKeyChar() == 'r')
                         enterPresse = false;
                 }
             }

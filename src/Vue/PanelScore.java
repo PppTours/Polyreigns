@@ -137,8 +137,8 @@ public class PanelScore extends JPanel {
 
     public void decrementerIndiceSelection(){
         indiceSelection--;
-        if(indiceSelection<0)
-            indiceSelection = 0;
+        if(indiceSelection<1)
+            indiceSelection = 1;
         majSelection();
     }
 
