@@ -14,7 +14,7 @@
     "choix2" : {"text" : "Faire semblant de n'avoir rien vu", "stats" : [0,0,-5,0]},
     "occurence" : 2
   },
-  {"id" : 3 , "descriptif" : "Vous avez oublié d'encaisser votre repas de ce midi.",
+  {"id" : 3 , "descriptif" : "Lors de votre service de ce midi, vous avez oublié de vous encaisser votre repas.",
     "choix1" : {"text" : "Personne ne le saura...", "stats" : [0,0,0,0]},
     "choix2" : {"text" : "Je vais payer !", "stats" : [-5,0,0,0]},
     "occurence" : 2

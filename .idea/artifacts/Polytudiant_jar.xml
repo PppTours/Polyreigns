@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Polytudiant:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Polytudiant_jar</output-path>
+    <root id="archive" name="Polytudiant.jar">
+      <element id="module-output" name="Polytudiant" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/game/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

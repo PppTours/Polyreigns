@@ -17,7 +17,7 @@
   {"id" : 4, "descriptif" : "Est-ce que la K'fet c'était mieux avant ?",
     "choix1" : {"text" : "Evidemment", "stats" : [5,5,5,5]},
     "choix2" : {"text" : "Non", "stats" : [-5,-5,-5,-5]},
-    "occurence" : 2
+    "occurence" : 1
   },
   {"id" : 5, "descriptif" : "Votre professeur vous a demandé de faire des exercices pour le prochain TD.",
     "choix1" : {"text" : "Faire les exercices", "stats" : [0,-5,0,5]},
@@ -173,5 +173,20 @@
     "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
     "choix2" : {"text" : "Non", "stats" : [0,0,-15,0]},
     "occurence" : 1
+  },
+  {"id" : 36 ,"descriptif" : "Vous êtes face à un QCM. Avec points négatifs. Réponse A ou réponse B ?",
+    "choix1" : {"text" : "A", "stats" : [0,0,0,-5]},
+    "choix2" : {"text" : "B", "stats" : [0,0,0,5]},
+    "occurence" : 1
+  },
+  {"id" : 37 ,"descriptif" : "Vous croisez un truand!! Vous fuyez en y mettant toute votre énergie, ou vous lui donnez tout ce que vous avez ?",
+    "choix1" : {"text" : "Fuir", "stats" : [0,-15,0,0]},
+    "choix2" : {"text" : "Tout donner", "stats" : [-15,0,0,0]},
+    "occurence" : 1
+  },
+  {"id" : 38 ,"descriptif" : "Depuis quelque jours vous avez un coup de mou et vous peinez à suivre en cours, achetez vous des vitamines ?",
+    "choix1" : {"text" : "Oui", "stats" : [-5,5,0,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,-5,0,-5]},
+    "occurence" : 2
   }
 ]}
