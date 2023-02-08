@@ -98,7 +98,7 @@ public class Controlleur {
     }
 
     /**
-     * Recupere toutes les stats du joueur
+     * Recupere toutes les nbPartieJoueeDepuis08_02 du joueur
      * @return un int[4] compose de 4 elements : argent, energie, vie sociale, note
      */
     public int[] getStatsJoueur(){
@@ -123,5 +123,9 @@ public class Controlleur {
 
     public int getMaxStat() {
         return Joueur.maxStat;
+    }
+
+    public String getCheminImageCarteCourante(){
+        return monde.premiereCarte().getCheminImage();
     }
 }

@@ -1,7 +1,7 @@
 package Jeu;
 
 /**
- * Decrit le joueur et ses stats
+ * Decrit le joueur et ses nbPartieJoueeDepuis08_02
  */
 public class Joueur {
 
@@ -21,7 +21,7 @@ public class Joueur {
     }
 
     /**
-     * Verifie si l'une des stats du joueurs est en dehors d'une borne
+     * Verifie si l'une des nbPartieJoueeDepuis08_02 du joueurs est en dehors d'une borne
      * @return true si c'est le cas
      */
     public boolean statHorsBorne(){

@@ -1,0 +1,52 @@
+{
+  "points": 15,
+  "cartes" :  [
+  {"id" : 0 ,"descriptif" : "Vous avez la possibilité de partir en Erasmus ! Attention il faudra prévoir des frais.",
+    "choix1" : {"text" : "J'y vais!", "stats" : [0,0,0,0], "declencheur": 1, "idCarteSuivante": 1},
+    "choix2" : {"text" : "Non flemme", "stats" : [0,0,0,0], "declencheur": 0},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+  {"id" : 1 , "descriptif" : "Vous devez choisir votre destination, puis acheter les billets d'avions, un appartement...",
+    "choix1" : {"text" : "Je vais en Pologne.", "stats" : [-15,0,0,0], "idCarteSuivante": 2},
+    "choix2" : {"text" : "Je vais en Italie", "stats" : [-15,0,0,0], "idCarteSuivante": 10},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+  {"id" : 2 , "descriptif" : "Après avoir fait connaissances avec votre classe, vos amis (przyjaciele) vous propose une sortie au cinéma (kino)",
+    "choix1" : {"text" : "Accepter (zaakceptować)", "stats" : [-5,0,5,0], "idCarteSuivante": 3},
+    "choix2" : {"text" : "Refuser (odpadki)", "stats" : [0,0,-5,0], "idCarteSuivante": 3},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+  {"id" : 3 , "descriptif" : "Vous przyjaciele vous demande de leur donner quelques cours (kurs) de Francais",
+    "choix1" : {"text" : "zaakceptować", "stats" : [0,-5,5,0], "idCarteSuivante": 4},
+    "choix2" : {"text" : "odpadki", "stats" : [0,0,-5,0], "idCarteSuivante": 4},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+  {"id" : 4 , "descriptif" : "",
+    "choix1" : {"text" : "", "stats" : [0,0,5,0], "idCarteSuivante": 5},
+    "choix2" : {"text" : "", "stats" : [0,0,-5,5], "idCarteSuivante": 5},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+  {"id" : 5 , "descriptif" : "",
+    "choix1" : {"text" : "", "stats" : [0,5,0,0], "idCarteSuivante": 6},
+    "choix2" : {"text" : "", "stats" : [0,5,5,0], "idCarteSuivante": 6},
+    "occurence" : 1,
+    "image": "extension_erasmus.png"
+  },
+    {"id" : 6 , "descriptif" : "",
+      "choix1" : {"text" : "", "stats" : [0,5,0,0], "idCarteSuivante": 7},
+      "choix2" : {"text" : "", "stats" : [0,5,5,0], "idCarteSuivante": 7},
+      "occurence" : 1,
+      "image": "extension_erasmus.png"
+    },
+    {"id" : 7 , "descriptif" : "A la pause entre deux cours, Marius vient vous voir et vous offre un café!",
+      "choix1" : {"text" : "Merci!", "stats" : [0,5,0,0], "idCarteSuivante": 8},
+      "choix2" : {"text" : "Multumesc", "stats" : [0,5,5,0], "idCarteSuivante": 8},
+      "occurence" : 1,
+      "image": "extension_erasmus.png"
+    }
+]}

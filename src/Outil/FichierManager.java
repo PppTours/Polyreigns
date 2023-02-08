@@ -175,6 +175,8 @@ public class FichierManager {
 
                 int occurence = ((Long)object.get("occurence")).intValue();
                 String description = (String) object.get("descriptif");
+                String image = (String) object.get("image");
+
 
                 Choix permutation = choixDroite;
                 if(Math.random()>0.5){
@@ -182,7 +184,7 @@ public class FichierManager {
                     choixGauche = permutation;
                 }
 
-                Carte c = new Carte(extension,description,choixGauche,choixDroite,occurence);
+                Carte c = new Carte(extension,description,choixGauche,choixDroite,occurence,"carte/"+image);
 
                 extension.getCartes().add(c);
             }
