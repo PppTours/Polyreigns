@@ -5,36 +5,36 @@
     "choix1" : {"text" : "Jeter le papier", "stats" : [0,0,0,0], "declencheur": 0},
     "choix2" : {"text" : "Prendre contact", "stats" : [-5,0,0,0], "declencheur": 1},
     "occurence" : 1,
-    "image": "extension_marabout.png"
+    "image": "Marabout.jpg"
   },
   {"id" : 1 , "descriptif" : "Vous appelez votre marabout. Il vous propose un rituel pour vous donner de l'énergie ou du charisme",
     "choix1" : {"text" : "Rituel d'énergie", "stats" : [-10,10,0,0]},
     "choix2" : {"text" : "Rituel de charisme", "stats" : [-10,0,10,0]},
     "occurence" : 2,
-    "image": "extension_marabout.png"
+    "image": "Marabout.jpg"
   },
   {"id" : 2 , "descriptif" : "Votre marabout vous propose un enchantement pour avoir de meilleurs notes",
     "choix1" : {"text" : "Accepter", "stats" : [-10,0,0,10]},
     "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
     "occurence" : 2,
-    "image": "extension_marabout.png"
+    "image": "Marabout.jpg"
   },
     {"id" : 3 , "descriptif" : "Votre marabout vous propose de faire tomber votre prof malade pour que vous puissiez faire une grasse mat.",
       "choix1" : {"text" : "Accepter", "stats" : [-5,5,0,0]},
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
       "occurence" : 2,
-      "image": "extension_marabout.png"
+      "image": "Marabout.jpg"
     },
   {"id" : 4 , "descriptif" : "Votre marabout a un gros deal pour vous: un rituel avec votre sang, il vous donnera gloire, pouvoir et intelligence",
     "choix1" : {"text" : "Accepter", "stats" : [10,-15,10,10]},
     "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
     "occurence" : 1,
-    "image": "extension_marabout.png"
+    "image": "Marabout.jpg"
   },
     {"id" : 5 , "descriptif" : "Votre marabout vous propose de vous acheter un de vos reins.",
       "choix1" : {"text" : "Tfacon j'en ai un autre", "stats" : [15,-15,0,0]},
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
       "occurence" : 1,
-      "image": "extension_marabout.png"
+      "image": "Marabout.jpg"
     }
 ]}

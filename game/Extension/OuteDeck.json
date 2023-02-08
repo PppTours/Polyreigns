@@ -5,36 +5,36 @@
     "choix1" : {"text" : "La chasser", "stats" : [-5,-5,-5,-5], "declencheur": 0},
     "choix2" : {"text" : "Lui faire un câlin", "stats" : [0,0,5,0], "declencheur": 1},
     "occurence" : 1,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   },
   {"id" : 1 , "descriptif" : "Vous recroisez dans un couloir cette mysterieuse otarie. Elle vous regarde et vous dit gentiment 'Oute oute'.",
     "choix1" : {"text" : "Oute ?", "stats" : [0,0,10,0]},
     "choix2" : {"text" : "Oui oui c'est ça", "stats" : [0,0,-10,0]},
     "occurence" : 1,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   },
   {"id" : 2 , "descriptif" : "Vous voyez l'otarie pendant la pause du midi. Elle semble avoir faim, mais vous n'avez que votre déjeuner à lui donner : des croustibats. Lui donnez-vous ?",
     "choix1" : {"text" : "Oui", "stats" : [0,-5,5,0]},
     "choix2" : {"text" : "Non", "stats" : [0,0,-5,0]},
     "occurence" : 2,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   },
   {"id" : 3 , "descriptif" : "Vous croisez le regard de votre amie l'otarie, elle s'exclame 'OUUUTE'",
     "choix1" : {"text" : "Crier 'OUUUTE'", "stats" : [0,0,10,0]},
     "choix2" : {"text" : "S'enfuir", "stats" : [0,-5,0,0]},
     "occurence" : 1,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   },
   {"id" : 4 , "descriptif" : "Vous voyez l'otarie en train de voler un vélo devant Polytech",
     "choix1" : {"text" : "Laisser faire", "stats" : [5,5,5,5]},
     "choix2" : {"text" : "Appeler le gardien pour qu'il aille lui casser la gueule", "stats" : [-15,-15,-15,-15]},
     "occurence" : 1,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   },
   {"id" : 5 , "descriptif" : "L'otarie est menacée de quitter Polytech! Comment réagissez vous ?",
     "choix1" : {"text" : "Faire une grève de la faim", "stats" : [0,-10,5,0]},
     "choix2" : {"text" : "Payer l'administration", "stats" : [-10,0,5,0]},
     "occurence" : 1,
-    "image": "extension_oute.png"
+    "image": "Oute.jpg"
   }
 ]}
