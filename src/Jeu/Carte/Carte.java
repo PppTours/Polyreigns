@@ -21,6 +21,8 @@ public class Carte implements Serializable {
 
     Extension extension;    //Extension d'origine
 
+    String cheminImage;
+
     /**
      * Creer une carte
      * @param pExtension son extension d'origine
@@ -29,19 +31,21 @@ public class Carte implements Serializable {
      * @param pChoixDroite son choix droite associe
      * @param pNbExemplaire son nombre d'exemplaire dans son extension
      */
-    public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite, int pNbExemplaire){
+    public Carte(Extension pExtension, String pDescriptif, Choix pChoixGauche, Choix pChoixDroite, int pNbExemplaire, String pCheminImage){
         extension = pExtension;
         descriptif = pDescriptif;
         choixDroite = pChoixDroite;
         choixGauche = pChoixGauche;
         nombreExemplaire = pNbExemplaire;
+        cheminImage = pCheminImage;
     }
 
-    /**
-     * Constructeur vide de carte
-     */
-    public Carte(){
+    public String getCheminImage() {
+        return cheminImage;
+    }
 
+    public void setCheminImage(String cheminImage) {
+        this.cheminImage = cheminImage;
     }
 
     public int getNombreExemplaire() {

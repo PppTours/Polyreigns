@@ -121,6 +121,10 @@ public class Panel extends JPanel {
 
                             if (jeuTermine)
                                 panelScore.afficherScore(controlleur.getScore());
+                            else{
+                                Image image = FichierManager.chargerImage(controlleur.getCheminImageCarteCourante());
+                                cardPicture.setIcon(new ImageIcon(image));
+                            }
                         }
                     }
                 }else {
