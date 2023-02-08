@@ -58,6 +58,7 @@ public class Pioche {
             pioche.addAll(aAjouter);
             Collections.shuffle(pioche);
             Collections.shuffle(pioche);
+            Collections.shuffle(pioche);
 
         }else{      //Utiliser IntervallePresence pour disperser les cartes
 
@@ -71,6 +72,7 @@ public class Pioche {
             aAjouter.addAll(pioche.subList(0, taille));
             pioche = new ArrayList<>(pioche.subList(taille,pioche.size()));
 
+            Collections.shuffle(aAjouter);
             Collections.shuffle(aAjouter);
             Collections.shuffle(aAjouter);
 
@@ -90,8 +92,8 @@ public class Pioche {
             }
         }
 
-        carteDeclencheuse.addAll(pioche.subList(0, 30));
-        pioche = new ArrayList<>(pioche.subList(30,pioche.size()));
+        carteDeclencheuse.addAll(pioche.subList(0, 50));
+        pioche = new ArrayList<>(pioche.subList(50,pioche.size()));
         Collections.shuffle(carteDeclencheuse);
         pioche.addAll(0,carteDeclencheuse);
 

@@ -118,7 +118,7 @@ public class FichierManager {
 
             String nomExtension = nomFichier.substring(0,nomFichier.indexOf('.'));
 
-            int intervalle = 40;
+            int intervalle = 50;
             if(nomExtension.equals(nomDeckPrincipal))
                 intervalle = -1;
 

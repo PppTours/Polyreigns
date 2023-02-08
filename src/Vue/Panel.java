@@ -162,6 +162,9 @@ public class Panel extends JPanel {
 
                             scoreTextfield.setText("Score : " + controlleur.getScore());
 
+                            mp3.close();
+                            mp3.play();
+
                         }
                     }
                 }

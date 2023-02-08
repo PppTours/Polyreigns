@@ -32,9 +32,8 @@ public class PanelStat extends JPanel {
             slotImageStats.add(FichierManager.chargerImage("fondStat.png"));
         }
 
-        setBackground(new Color(0,0,0,0));
-
-        setSize(500,150);
+        setOpaque(false);
+        setSize(500,180);
 
     }
 
@@ -57,7 +56,7 @@ public class PanelStat extends JPanel {
             int hauteur = (int) (stats[i] * 74 / max);      //74 c'est la taille de l'image
 
             Image image = slotImageStats.get(i);
-            g.drawImage(image, increment, 71+74-hauteur,74,hauteur,null);
+            g.drawImage(image, increment, 72+74-hauteur,74,hauteur,null);
             increment+=80;
         }
 

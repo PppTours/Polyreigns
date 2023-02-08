@@ -19,7 +19,6 @@ public class MP3 {
     public void close() {
         if (player != null){
             player.close();
-            loop = false;
         }
     }
 
@@ -38,9 +37,7 @@ public class MP3 {
         // run in new thread to play in background
         new Thread(() -> {
             try {
-                do{
                     player.play();
-                }while(loop);
             } catch (Exception e) {
                 System.out.println(e);
             }

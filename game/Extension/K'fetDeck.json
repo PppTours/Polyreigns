@@ -14,7 +14,7 @@
     "image": "Kfet.jpg"
   },
   {"id" : 2 , "descriptif" : "Vos camarades ont besoin d'aide pour le service de ce midi, ils sont surchargés.",
-    "choix1" : {"text" : "Les aider", "stats" : [0,-5,0,0]},
+    "choix1" : {"text" : "Les aider", "stats" : [0,-5,5,0]},
     "choix2" : {"text" : "Faire semblant de n'avoir rien vu", "stats" : [0,0,-5,0]},
     "occurence" : 2,
     "image": "Kfet.jpg"
@@ -32,7 +32,7 @@
     "image": "Kfet.jpg"
   },
   {"id" : 5 , "descriptif" : "Après un coup mal placé, le tapis du billard est cassé et est inutilisable. Achetez vous un nouveau tapis ?",
-    "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
+    "choix1" : {"text" : "Oui", "stats" : [-10,0,5,0]},
     "choix2" : {"text" : "Non", "stats" : [0,0,-10,0]},
     "occurence" : 1,
     "image": "Kfet.jpg"

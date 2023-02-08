@@ -305,6 +305,12 @@
       "choix1" : {"text" : "Les vendre sur Leboncoin", "stats" : [10,0,0,0]},
       "choix2" : {"text" : "En donner à des associations", "stats" : [0,0,10,0]},
       "occurence" : 1,
+      "image": "money.jpg"
+    },
+    {"id" : 52 ,"descriptif" : "Ton poly-gang te propose de jouer à Roblox au lieu d'écouter le cours en CM.",
+      "choix1" : {"text" : "Jouer à Roblox", "stats" : [0,0,5,-5]},
+      "choix2" : {"text" : "Refuser", "stats" : [0,0,-5,5]},
+      "occurence" : 2,
       "image": "cours.jpg"
     }
 ]}
