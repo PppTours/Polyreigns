@@ -21,6 +21,9 @@ public class FichierManager {
 
     static boolean modeDev = true;
 
+    /**
+     * Exporte les meilleurs joueurs dans game/scores.txt
+     */
     public static void exporterMeilleurJoueur(){
 
         String chemin = "scores.txt";
@@ -39,6 +42,9 @@ public class FichierManager {
 
     }
 
+    /**
+     * Importe les meilleurs joueurs depuis game/scores.txt
+     */
     public static void importerMeilleurJoueur(){
 
         String chemin = "scores.txt";
@@ -66,6 +72,9 @@ public class FichierManager {
 
     }
 
+    /**
+     * Importe toutes les cartes et extensions, localisées dans game/Extension/
+     */
     public static void importerTouteLesCartes(){
 
         String chemin = "Extension";
@@ -87,6 +96,10 @@ public class FichierManager {
 
     }
 
+    /**
+     * Importe toute les cartes d'une extension
+     * @param nomFichier le nom du fichier json de l'extension
+     */
     private static void importerExtension(String nomFichier){
 
         String chemin = "Extension/";
@@ -180,6 +193,12 @@ public class FichierManager {
 
     }
 
+
+    /**
+     * Charge une image presente dans le dossier game/image/
+     * @param pNom le nom de l'image
+     * @return
+     */
     public static Image chargerImage(String pNom){
 
         String chemin = "image/";
