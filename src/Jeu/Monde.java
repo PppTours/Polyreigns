@@ -131,8 +131,8 @@ public class Monde {
             String texteChoixDroite="Oups...", texteChoixGauche="AH!", texteCarte = null;
 
             if(joueur.getArgent()<=0) {
-                texteCarte = "Vous avez lamentablement échoué." +
-                        " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.";
+                texteCarte = "Vous n'avez plus d'argent et vous ne pouvez pas continuer votre vie d'etudiant. Vous " +
+                        "avez été contraint de quitter Polytech et vous bossez maintenant à MacDo.";
             }
             if(joueur.getArgent()>Joueur.maxStat) {
                 texteCarte = "Vous êtes tellement riche que vous avez quitté Polytech et investit toute votre" +
