@@ -12,7 +12,8 @@ public class PanelChoix extends JPanel {
 
     public PanelChoix(String pImage){
 
-        setBackground(new Color(255,255,255,200));
+        setBackground(new Color(255,255,255,100));
+        setOpaque(false);
 
         Font f = new Font(Font.SANS_SERIF, Font.BOLD,18);
 
@@ -23,7 +24,8 @@ public class PanelChoix extends JPanel {
         setSize(180,200);
 
         textArea = new JTextArea();
-        textArea.setBackground(new Color(0,0,0,0));
+        textArea.setOpaque(false); // background of parent will be painted first
+
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
         textArea.setFont(f);
@@ -39,7 +41,15 @@ public class PanelChoix extends JPanel {
 
     public void changerTexte(String pText){
         textArea.setText(pText);
-        textArea.repaint();
     }
+
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        g.setColor( getBackground() );
+        g.fillRect(0, 0, getWidth(), getHeight());
+        super.paintComponent(g);
+    }
+
 
 }
