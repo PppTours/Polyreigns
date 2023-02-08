@@ -11,7 +11,7 @@
     "choix1" : {"text" : "Acheter une crêpe", "stats" : [-5,5,0,0]},
     "choix2" : {"text" : "Ne rien acheter", "stats" : [0,0,0,0]},
     "occurence" : 2,
-    "image": "K'fet.jpg"
+    "image": "Kfet.jpg"
   },
   {"id" : 3, "descriptif" : "Le BDE organise une soirée la veille d'un examen important, que décidez-vous ?",
     "choix1" : {"text" : "Participer à la soirée", "stats" : [-5,-5,10,-5]},
@@ -23,7 +23,7 @@
     "choix1" : {"text" : "Evidemment", "stats" : [5,5,5,5]},
     "choix2" : {"text" : "Non", "stats" : [-5,-5,-5,-5]},
     "occurence" : 1,
-    "image": "K'fet.jpg"
+    "image": "Kfet.jpg"
   },
   {"id" : 5, "descriptif" : "Votre professeur vous a demandé de faire des exercices pour le prochain TD.",
     "choix1" : {"text" : "Faire les exercices", "stats" : [0,-5,0,5]},
@@ -52,12 +52,12 @@
   {"id" : 9, "descriptif" : "Miracle ! Vous finissez plus tôt aujourd'hui, Vous décidez d'en profiter pour...",
     "choix1" :{"text" : "Réviser", "stats" : [0,0,0,10]},
     "choix2" : {"text" : "Dormir", "stats" : [0,10,0,0]},
-    "occurence" : 2,
+    "occurence" : 3,
     "image": "planning.jpg"
   },
   {"id" : 10, "descriptif" : "Vos partenaires de projet ne travaillent pas, le projet va prendre du retard...",
     "choix1" : {"text" : "Travailler d'avantage", "stats" : [0,-10,0,5]},
-    "choix2" : {"text" : "Se plaindre au prof", "stats" : [0,0,-10,0]},
+    "choix2" : {"text" : "Se plaindre au prof", "stats" : [0,0,-10,5]},
     "occurence" : 2,
     "image": "projet.jpg"
   },
@@ -86,7 +86,7 @@
     "image": "Burgir.jpg"
   },
   {"id" : 15 ,"descriptif" : "Voyant que vous excellez en Programation Linéaire, vos amis vous demandent de les aider pour réviser.",
-    "choix1" : {"text" : "Les aider", "stats" : [0,-5,5,0]},
+    "choix1" : {"text" : "Les aider", "stats" : [0,-5,10,0]},
     "choix2" : {"text" : "CHEH", "stats" : [0,0,-10,0]},
     "occurence" : 1,
     "image": "Polypotes.jpg"
@@ -116,15 +116,15 @@
     "image": "transports.jpg"
   },
   {"id" : 20 ,"descriptif" : "Votre ami vous propose 10€ pour que vous finissiez son projet à sa place",
-    "choix1" : {"text" : "J'accepte !", "stats" : [5,-10,5,0]},
-    "choix2" : {"text" : "Flemme de ouf", "stats" : [0,0,-10,0]},
+    "choix1" : {"text" : "J'accepte !", "stats" : [5,-5,5,0]},
+    "choix2" : {"text" : "Flemme de ouf", "stats" : [0,0,-5,0]},
     "occurence" : 1,
     "image": "projet.jpg"
   },
   {"id" : 21 ,"descriptif" : "Vous n'avez pas cours ce matin ! Ca part sur une grasse mat'.",
     "choix1" : {"text" : "ZZZZZ", "stats" : [0,15,0,0]},
     "choix2" : {"text" : "Nous rompichâmes", "stats" : [0,15,0,0]},
-    "occurence" : 2,
+    "occurence" : 3,
     "image": "dodo.jpg"
   },
   {"id" : 22 ,"descriptif" : "Ce midi vous avez la turbo dalle. Mangez-vous plus que d'habitude ?",
@@ -143,7 +143,7 @@
     "choix1" : {"text" : "Rentrer à la maison", "stats" : [0,0,-5,0]},
     "choix2" : {"text" : "Rester", "stats" : [0,-5,5,0]},
     "occurence" : 3,
-    "image": "Ploypotes.jpg"
+    "image": "Polypotes.jpg"
   },
   {"id" : 25 ,"descriptif" : "Ce TP est ennuyant... Vous pourriez travailler, ou aussi trouver des réponses éclatées sur Internet",
     "choix1" : {"text" : "Travailler serieusement", "stats" : [0,-5,0,5]},
@@ -207,7 +207,7 @@
   },
   {"id" : 35 ,"descriptif" : "Sans faire exprès, vous avez rayé le portable d'un de vos poly-pote... Vous lui payez le changement de son écran ?",
     "choix1" : {"text" : "Oui", "stats" : [-10,0,0,0]},
-    "choix2" : {"text" : "Non", "stats" : [0,0,-15,0]},
+    "choix2" : {"text" : "Non", "stats" : [0,0,-10,0]},
     "occurence" : 1,
     "image": "Polypotes.jpg"
   },
@@ -242,7 +242,7 @@
     "image": "admin.jpg"
   },
   {"id" : 41 ,"descriptif" : "Tu vas au WEA cette année ?",
-    "choix1" : {"text" : "Evidemment", "stats" : [-15,0,15,0]},
+    "choix1" : {"text" : "Evidemment", "stats" : [-10,0,15,0]},
     "choix2" : {"text" : "Non flemme", "stats" : [0,0,-5,0]},
     "occurence" : 1,
     "image": "Polypotes.jpg"
@@ -292,6 +292,18 @@
     {"id" : 49 ,"descriptif" : "Vous avez oublié de faire le devoir d'anglais pour demain. Il est 23h.",
       "choix1" : {"text" : "No problem. I spike anglish verry good", "stats" : [0,-5,0,-5]},
       "choix2" : {"text" : "Abandonner et aller dormir", "stats" : [0,0,0,-10]},
+      "occurence" : 1,
+      "image": "cours.jpg"
+    },
+    {"id" : 50 ,"descriptif" : "Vous avez un CM d'une matière où vous êtes déjà un expert.",
+      "choix1" : {"text" : "Y aller et suivre quand même", "stats" : [0,0,0,5]},
+      "choix2" : {"text" : "Rester à la K'Fet et faire une bonne sieste", "stats" : [0,10,0,0]},
+      "occurence" : 2,
+      "image": "cours.jpg"
+    },
+    {"id" : 51 ,"descriptif" : "Vous avez beaucoup de vêtements que vous ne portez plus.",
+      "choix1" : {"text" : "Les vendre sur Leboncoin", "stats" : [10,0,0,0]},
+      "choix2" : {"text" : "En donner à des associations", "stats" : [0,0,10,0]},
       "occurence" : 1,
       "image": "cours.jpg"
     }

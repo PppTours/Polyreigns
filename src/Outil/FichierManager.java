@@ -211,6 +211,7 @@ public class FichierManager {
         try {
             image = ImageIO.read(new File(chemin+pNom));
         } catch (IOException e) {
+            System.out.println("Image non trouvee: "+chemin+pNom);
             throw new RuntimeException(e);
         }
         return image;

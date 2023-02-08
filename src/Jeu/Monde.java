@@ -134,28 +134,28 @@ public class Monde {
                         "avez été contraint de quitter Polytech et vous bossez maintenant à MacDo.";
                 texteChoixDroite = "Heureusement que j'aime les frites";
                 texteChoixGauche = "Ca a toujours été ma vocation";
-                image = "NoMoney.jpg";
+                image = "carte/NoMoney.jpg";
             }
             if(joueur.getArgent()>Joueur.maxStat) {
                 texteCarte = "Vous êtes tellement riche que vous avez quitté Polytech et investit toute votre" +
                         " fortune dans des NFT.";
                 texteChoixDroite = "Je vais devenir riche";
                 texteChoixGauche = "Au revoir la plèbe";
-                image = "TooMuchMoney.jpg";
+                image = "carte/TooMuchMoney.jpg";
             }
             if(joueur.getEnergie()<=0) {
                 texteCarte = "Vous faites un burn out" +
                 " et avait été interné dans un hopital psychiatrique :-)";
                 texteChoixDroite = "Pitié je ne veux plus coder";
                 texteChoixGauche = "Enfin du repos";
-                image = "burnOUTE.jpg";
+                image = "carte/burnOUTE.jpg";
             }
             if(joueur.getEnergie()>Joueur.maxStat) {
                 texteCarte = "Vous avez tellement d'energie que vous êtes devenu insuppportable a vivre. Vous ne restez plus" +
                         " en place. Tout le monde a en marre de vous. Une pétition vous a fait exclure de Polytech.";
                 texteChoixDroite = "Oupsi";
                 texteChoixGauche = "AAAAAAAAAAHFEZUFHQPEFNR8G¨?RIS9I";
-                image = "TOOMUCHENERGY.jpg";
+                image = "carte/TOOMUCHENERGY.jpg";
             }
             if(joueur.getVieSociale()<=0) {
                 texteCarte = "Vous passez tellement " +
@@ -163,21 +163,21 @@ public class Monde {
                         "en tant qu'élève.";
                 texteChoixDroite = "...";
                 texteChoixGauche = "...";
-                image = "4everAlone.jpg";
+                image = "carte/4everAlone.jpg";
             }
             if(joueur.getVieSociale()>Joueur.maxStat) {
                 texteCarte = "Vous êtes tellement populaire que vous avez maintenant une foule de fans constamment à vos trousses." +
                         " L'un d'eux vous a poignardé après que vous ayez refusé un selfie.";
                 texteChoixDroite = "AAAARGH";
                 texteChoixGauche = "*mort*";
-                image = "TooMuchFamous.jpg";
+                image = "carte/TooMuchFamous.jpg";
             }
             if(joueur.getNote()<=0) {
                 texteCarte = "Vous avez lamentablement échoué." +
                         " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.";
                 texteChoixDroite = "A l'année prochaine!";
                 texteChoixGauche = "Snif.";
-                image = "NoBrain.jpg";
+                image = "carte/NoBrain.jpg";
             }
             if(joueur.getNote()>Joueur.maxStat) {
                 texteCarte = "Votre intelligence surhumaine a fini par attirer des scientifiques du monde entier." +
@@ -185,7 +185,7 @@ public class Monde {
                         " actuellement dans un bocal et flotte aux côtés des cerveaux les plus brillants.";
                 texteChoixDroite = "blblbl";
                 texteChoixGauche = "...";
-                image = "BIGBRAIN.jpg";
+                image = "carte/BIGBRAIN.jpg";
             }
 
             Choix droiteFin = new Choix(texteChoixDroite,0,0,0,0,0);

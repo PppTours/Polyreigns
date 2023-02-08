@@ -63,7 +63,7 @@ public class Panel extends JPanel {
 
         cardPicture = new JLabel();
         cardPicture.setSize(335,335);
-        Image i = FichierManager.chargerImage("carteTest2.png");
+        Image i = FichierManager.chargerImage(controlleur.getCheminImageCarteCourante());
         cardPicture.setIcon(new ImageIcon(i));
         add(cardPicture);
 
@@ -156,6 +156,12 @@ public class Panel extends JPanel {
 
                             choix1.setVisible(true);
                             choix2.setVisible(true);
+
+                            Image i = FichierManager.chargerImage(controlleur.getCheminImageCarteCourante());
+                            cardPicture.setIcon(new ImageIcon(i));
+
+                            scoreTextfield.setText("Score : " + controlleur.getScore());
+
                         }
                     }
                 }
