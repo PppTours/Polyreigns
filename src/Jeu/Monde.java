@@ -126,50 +126,54 @@ public class Monde {
             return;
         }
 
-        if(joueur.getArgent()<=0){
-            Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
-            Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
+        if(joueur.statHorsBorne()){
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous n'avez plus d'argent " +
-                    "et vous ne pouvez pas continuer votre vie d'etudiant, vous allez devoir trouver un travail a MacDo.",
+            String texteChoixDroite="Oups...", texteChoixGauche="AH!", texteCarte = null;
+
+            if(joueur.getArgent()<=0) {
+                texteCarte = "Vous avez lamentablement échoué." +
+                        " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.";
+            }
+            if(joueur.getArgent()>Joueur.maxStat) {
+                texteCarte = "Vous êtes tellement riche que vous avez quitté Polytech et investit toute votre" +
+                        " fortune dans des NFT.";
+            }
+            if(joueur.getEnergie()<=0) {
+                texteCarte = "Vous faites un burn out" +
+                " et avait été interné dans un hopital psychiatrique :-)";
+            }
+            if(joueur.getEnergie()>Joueur.maxStat) {
+                texteCarte = "Vous avez tellement d'energie que vous êtes devenu insuppportable a vivvre. Vous ne restez plus" +
+                        " en place. Tout le monde a en marre de vous. Une pétition vous a fait exclure de Polytech.";
+            }
+            if(joueur.getVieSociale()<=0) {
+                texteCarte = "Vous passez tellement " +
+                        "inaperçu auprès de tout le monde que même Polytech a oublié votre existence, vous n'êtes plus inscrit " +
+                        "en tant qu'élève.";
+            }
+            if(joueur.getVieSociale()>Joueur.maxStat) {
+                texteCarte = "Vous êtes tellement populaire que vous avez maintenant une foule de fan constamment à vous trousse." +
+                        " L'un d'eux vous a poignardé après que vous ayez refusé un selfie.";
+            }
+            if(joueur.getNote()<=0) {
+                texteCarte = "Vous avez lamentablement échoué." +
+                        " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.";
+            }
+            if(joueur.getNote()>Joueur.maxStat) {
+                texteCarte = "Votre intelligence surhumaine a fini par attirer des scientifiques du monde entier." +
+                        " Le consensus scientifique a exigé que vous soyez disséqué afin d'étudier votre corps. Votre cerveau est" +
+                        " actuellement dans un bocal et flotte aux cotés des cerveaux les plus brillants.";
+            }
+
+            Choix droiteFin = new Choix(texteChoixDroite,0,0,0,0,0);
+            Choix gaucheFin = new Choix(texteChoixGauche,0,0,0,0,0);
+
+            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),texteCarte,
                     gaucheFin,droiteFin,1);
 
             pioche.viderPioche();
             pioche.ajouterCarteDebut(carteFin);
-        }
-        if(joueur.getNote()<=0){
-            Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
-            Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
 
-            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous avez lamentablement échoué." +
-                    " Vous allez redoubler, si Polytech veut bien de vous, ce n'est pas sûr.",
-                    gaucheFin,droiteFin,1);
-
-            pioche.viderPioche();
-            pioche.ajouterCarteDebut(carteFin);
-        }
-        if(joueur.getEnergie()<=0){
-            Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
-            Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
-
-            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous faites un burn out" +
-                    " et avait été interné dans un hopital psychiatrique :-)",
-                    gaucheFin,droiteFin,1);
-
-            pioche.viderPioche();
-            pioche.ajouterCarteDebut(carteFin);
-        }
-        if(joueur.getVieSociale()<=0){
-            Choix droiteFin = new Choix("Oups...",0,0,0,0,0);
-            Choix gaucheFin = new Choix("AH!",0,0,0,0,0);
-
-            Carte carteFin = new Carte(Extension.getExtensionParNom("MainDeck"),"Vous passez tellement " +
-                    "inaperçu auprès de tout le monde que même Polytech a oublié votre existence, vous n'êtes plus inscrit " +
-                    "en tant qu'élève.",
-                    gaucheFin,droiteFin,1);
-
-            pioche.viderPioche();
-            pioche.ajouterCarteDebut(carteFin);
         }
 
     }
