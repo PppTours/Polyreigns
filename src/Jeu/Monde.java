@@ -46,7 +46,7 @@ public class Monde {
 
     /**
      * Enleve la premiere carte de la pioche. Verifie si cela cause l'ajout d'une extension.
-     * Met a jour les nbPartieJoueeDepuis08_02 du joueur et verifie si le jeu est fini
+     * Met a jour les stats du joueur et verifie si le jeu est fini
      */
     public boolean piocherCarte(){
 
@@ -113,7 +113,7 @@ public class Monde {
     /**
      * Verifie si le jeu est termine.
      * Si la pioche est vide, alors le jeu est fini.
-     * Sinon, si l'une des nbPartieJoueeDepuis08_02 du joueur est <= 0, on vide la pioche
+     * Sinon, si l'une des stats du joueur est <= 0, on vide la pioche
      * et on rajoute une carte custom representant la cause de la fin du joueur.
      * Le joueur pioche cette derniere carte, et arrive donc sur la fin normale.
      */
@@ -136,7 +136,7 @@ public class Monde {
                 texteChoixGauche = "Ca a toujours été ma vocation";
                 image = "carte/NoMoney.jpg";
             }
-            if(joueur.getArgent()>Joueur.maxStat) {
+            if(joueur.getArgent()>=Joueur.maxStat) {
                 texteCarte = "Vous êtes tellement riche que vous avez quitté Polytech et investit toute votre" +
                         " fortune dans des NFT.";
                 texteChoixDroite = "Je vais devenir riche";
@@ -150,7 +150,7 @@ public class Monde {
                 texteChoixGauche = "Enfin du repos";
                 image = "carte/burnOUTE.jpg";
             }
-            if(joueur.getEnergie()>Joueur.maxStat) {
+            if(joueur.getEnergie()>=Joueur.maxStat) {
                 texteCarte = "Vous avez tellement d'energie que vous êtes devenu insuppportable a vivre. Vous ne restez plus" +
                         " en place. Tout le monde a en marre de vous. Une pétition vous a fait exclure de Polytech.";
                 texteChoixDroite = "Oupsi";
@@ -165,7 +165,7 @@ public class Monde {
                 texteChoixGauche = "...";
                 image = "carte/4everAlone.jpg";
             }
-            if(joueur.getVieSociale()>Joueur.maxStat) {
+            if(joueur.getVieSociale()>=Joueur.maxStat) {
                 texteCarte = "Vous êtes tellement populaire que vous avez maintenant une foule de fans constamment à vos trousses." +
                         " L'un d'eux vous a poignardé après que vous ayez refusé un selfie.";
                 texteChoixDroite = "AAAARGH";
@@ -179,7 +179,7 @@ public class Monde {
                 texteChoixGauche = "Snif.";
                 image = "carte/NoBrain.jpg";
             }
-            if(joueur.getNote()>Joueur.maxStat) {
+            if(joueur.getNote()>=Joueur.maxStat) {
                 texteCarte = "Votre intelligence surhumaine a fini par attirer des scientifiques du monde entier." +
                         " Le Conseil Scientifique a exigé que vous soyez disséqué afin d'étudier votre corps. Votre cerveau est" +
                         " actuellement dans un bocal et flotte aux côtés des cerveaux les plus brillants.";

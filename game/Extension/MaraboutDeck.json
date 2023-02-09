@@ -36,5 +36,11 @@
       "choix2" : {"text" : "Refuser", "stats" : [0,0,0,0]},
       "occurence" : 1,
       "image": "Marabout.jpg"
+    },
+    {"id" : 6 , "descriptif" : "Etant son client le plus fidèle, le marabout vous offre un petit boost :-)",
+      "choix1" : {"text" : "Noice", "stats" : [5,5,5,5]},
+      "choix2" : {"text" : "Je sens la santé revenir en moi", "stats" : [5,5,5,5]},
+      "occurence" : 1,
+      "image": "Marabout.jpg"
     }
 ]}

@@ -1,7 +1,7 @@
 package Jeu;
 
 /**
- * Decrit le joueur et ses nbPartieJoueeDepuis08_02
+ * Decrit le joueur et ses stats
  */
 public class Joueur {
 
@@ -21,12 +21,12 @@ public class Joueur {
     }
 
     /**
-     * Verifie si l'une des nbPartieJoueeDepuis08_02 du joueurs est en dehors d'une borne
+     * Verifie si l'une des stats du joueur est en dehors d'une borne
      * @return true si c'est le cas
      */
     public boolean statHorsBorne(){
-        return argent > maxStat || argent <= 0 || energie > maxStat || energie <= 0 || vieSociale > maxStat || vieSociale <= 0
-                || note > maxStat || note <= 0;
+        return argent >= maxStat || argent <= 0 || energie >= maxStat || energie <= 0 || vieSociale >= maxStat || vieSociale <= 0
+                || note >= maxStat || note <= 0;
 
     }
 

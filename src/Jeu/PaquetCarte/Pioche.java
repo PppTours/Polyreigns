@@ -92,8 +92,8 @@ public class Pioche {
             }
         }
 
-        carteDeclencheuse.addAll(pioche.subList(0, 50));
-        pioche = new ArrayList<>(pioche.subList(50,pioche.size()));
+        carteDeclencheuse.addAll(pioche.subList(0, 40));
+        pioche = new ArrayList<>(pioche.subList(40,pioche.size()));
         Collections.shuffle(carteDeclencheuse);
         pioche.addAll(0,carteDeclencheuse);
 

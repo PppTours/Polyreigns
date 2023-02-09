@@ -271,7 +271,7 @@
       "occurence" : 2,
       "image": "dodo.jpg"
     },
-    {"id" : 46 ,"descriptif" : "Le prix de l'eau chaud a augmenté, continuer de prendre des douches?",
+    {"id" : 46 ,"descriptif" : "Le prix de l'eau chaude a augmenté, continuer de prendre des douches?",
       "choix1" : {"text" : "L'hygiène c'est important", "stats" : [-5,0,0,0]},
       "choix2" : {"text" : "Je vais mettre du deo pour masquer", "stats" : [0,0,-5,0]},
       "occurence" : 2,
